@@ -93,5 +93,3 @@ Figma：https://www.figma.com/file/M0QXFzYgjgN5m1THVeUw8B/D-PhotoMap?node-id=0%3
 [こちら](https://xd.adobe.com/view/53d16b6b-bcdf-479b-4e6a-a67539af96c5-25e0/grid/)と同様にURLを記載している場合は違和感がないものになっているか？（必須ではありません）
 - [ ] 特に記載していない or 特に違和感を感じなかった
  
- ### ER図
- URL：https://app.diagrams.net/

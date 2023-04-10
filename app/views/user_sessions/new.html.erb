@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>login user</h1>
+            <%= form_with url: login_path do |f| %>
+                <div class="form-group">
+                    <%= f.label :email %>
+                    <%= f.text_field :email, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :password %>
+                    <%= f.password_field :password, class: 'form-control' %>
+                </div>
+                <div class="actions">
+                    <%= f.submit class: 'btn btn-primary' %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

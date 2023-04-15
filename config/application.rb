@@ -34,5 +34,21 @@ module Dphotomap
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.generators do |g|
+      g.skip_routes true
+      g.assets false
+      g.helper false
+      g.test_framework false
+    end
+    
+    # i18nの導入
+    config.i18n.default_locale = :ja
+    config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
+
+    # application.js ファイルをプリコンパイルするための設定
+    config.assets.paths << Rails.root.join("app", "assets", "javascripts")
+    config.assets.precompile += %w( application.js )
+
   end
 end

@@ -1,0 +1,8 @@
+<% content_for(:title, t('.title')) %>
+<h1><%= t'.title' %></h1>
+
+<ul>
+  <% @photos.each do |photo| %>
+    <li><%= photo.title %></li>
+  <% end %>
+</ul>

@@ -2,6 +2,7 @@ ja:
   defaults:
     login: 'ログイン'
     register: '登録'
+    post: '投稿'
     logout: 'ログアウト'
   users:
     new:
@@ -19,8 +20,14 @@ ja:
       title: '写真投稿'
     edit:
       title: '写真編集'
+    show:
+      title: '写真詳細'
   diaries:
     new:
       title: '日記投稿'
     edit:
       title: '日記編集'
+    index:
+      title: '日記一覧'
+    show:
+      title: '日記詳細'

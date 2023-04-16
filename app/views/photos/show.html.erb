@@ -1,0 +1,18 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1><%= t'.title' %></h1>
+            <%= image_tag @photo.image.url %>
+            <%= @photo.day %>
+            <%= @photo.park %>
+            <%= @photo.area %>
+            <%= @photo.body %>
+            <%= link_to "撮影場所" %>
+        </div>
+
+        <%= link_to "編集", edit_photo_path(@photo) %>
+        <%= link_to ”写真一覧”, photos_path %>
+                
+          
+  

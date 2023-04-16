@@ -16,7 +16,7 @@ ja:
         area: 'エリア'
         body: '本文'
         image: '写真'
-      dialy:
+      diary:
         day: '日にち'
         title: 'タイトル'
         body: '本文'

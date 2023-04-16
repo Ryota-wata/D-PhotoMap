@@ -1,0 +1,16 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1><%= t'.title' %></h1>
+        <ul>
+            <% @diaries.each do |diary| %>
+                <li><%= diary.day %></li>
+                <li><%= diary.title %></li>
+            <% end %>
+        </ul>
+    </div>
+  </div>
+</div>
+
+

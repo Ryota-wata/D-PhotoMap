@@ -1,8 +1,15 @@
 <% content_for(:title, t('.title')) %>
-<h1><%= t'.title' %></h1>
-
-<ul>
-  <% @photos.each do |photo| %>
-    <li><%= photo.title %></li>
-  <% end %>
-</ul>
+<!-- 掲示板一覧 -->
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+      <h1><%= t'.title' %></h1>
+        <% if @photos.present? %>
+          <%= render @photos %>
+        <% else %>
+          <p><%= '写真なし' %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

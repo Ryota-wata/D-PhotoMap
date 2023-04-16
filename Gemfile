@@ -47,7 +47,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "sorcery"
+gem "sorcery", '0.16.3'
 gem 'carrierwave', '2.0.2'
 gem 'rails-i18n'
 gem 'jquery-rails'

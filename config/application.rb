@@ -46,6 +46,10 @@ module Dphotomap
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
 
+    # タイムゾーンの設定
+    config.time_zone = 'Tokyo'	
+    config.active_record.default_timezone = :local
+
     # application.js ファイルをプリコンパイルするための設定
     config.assets.paths << Rails.root.join("app", "assets", "javascripts")
     config.assets.precompile += %w( application.js )

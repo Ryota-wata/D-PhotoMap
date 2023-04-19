@@ -4,6 +4,9 @@ ja:
     register: '登録'
     post: '投稿'
     logout: 'ログアウト'
+  static_pages:
+    map: 
+      title: 'パークマップ'
   users:
     new:
       title: 'ユーザー登録'

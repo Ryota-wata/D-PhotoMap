@@ -1,18 +1,76 @@
 <% content_for(:title, t('.title')) %>
 <div class="container">
-    <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <h1><%= t'.title' %></h1>
-            <%= image_tag @photo.image.url %>
-            <%= @photo.day %>
-            <%= @photo.park %>
-            <%= @photo.area %>
-            <%= @photo.body %>
-            <%= link_to "撮影場所" %>
-        </div>
+            <h1 class="m-5"><%= t'.title' %></h1>
+                <table class="table table-hover">
+                <tr>
+                    <th><%= Photo.human_attribute_name(:day) %></th>
+                    <td><%= @photo.day %></td>
+                </tr>
+                <tr>
+                    <th><%= Photo.human_attribute_name(:park) %></th>
+                    <td><%= @photo.park %></td>
+                </tr>
+                <tr>
+                    <th><%= Photo.human_attribute_name(:area) %></th>
+                    <td><%= @photo.area %></td>
+                </tr>
+                <tr>
+                    <th><%= Photo.human_attribute_name(:body) %></th>
+                    <td><%= @photo.body %></td>
+                </tr>
+            </table></br>
+            <div> 
+                <%= image_tag @photo.image, size: "800x500"  if @photo.image.attached? %>
+            </div></br>
+            <table class="table table-hover">
+                <tr>
+                  <th>撮影場所</th>
+                </tr>
+            </table>
 
-        <%= link_to "編集", edit_photo_path(@photo) %>
-        <%= link_to ”写真一覧”, photos_path %>
-                
+            <div id="map" style="height: 500px; width: 800px;"></div></br>
+
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <%= link_to "編集", edit_photo_path(@photo), class: 'btn btn-primary' %>
+                    <%= link_to "削除", photo_path(@photo), method: :delete, data: { confirm: t('.confirm') }, class: 'btn btn-danger' %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+<script>
+  function initMap() {
+    let latitude = <%= @photo.latitude %>;
+    let longitude = <%= @photo.longitude %>;
+    let location = {lat: latitude, lng: longitude};
+    let map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 17,
+      center: location,
+      heading: 90,
+      mapTypeId: 'satellite',
+      restriction: {
+        latLngBounds: {
+          north: 35.63893756980336,
+          south: 35.62193630211798,
+          west: 139.8745356094571,
+          east: 139.89240645368025
+        },
+      strictBounds: true
+     }
+    });
+
+    marker = new google.maps.Marker({
+      position: location,
+      map: map
+    });
+  }
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.google_maps_api_key %>&callback=initMap"></script>
+
+             
           
   

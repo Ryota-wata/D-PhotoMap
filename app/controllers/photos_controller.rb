@@ -8,7 +8,8 @@ class PhotosController < ApplicationController
   def edit ;end
 
   def index
-    @photos = Photo.all
+    @q = Photo.ransack(params[:q])
+    @photos = @q.result(distinct: true).includes(:user).order(created_at: :desc)
   end
 
   def show
@@ -16,34 +17,37 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = current_user.posts.build(photo_params)
+    @photo = current_user.photos.build(photo_params)
     if @photo.save
-      redirect_to photos_path, notice: '写真を投稿しました'
+      redirect_to photos_path, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :new
     end
   end
 
   def update
     if @photo.update(photo_params)
-      redirect_to root_path, notice: '写真を更新しました'
+      redirect_to photos_path, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :edit
     end
   end
 
   def destroy
     @photo.destroy!
-    redirect_to root_path, notice: '写真を削除しました'
+    redirect_to photos_path, success: t('.success')
   end
 
   private
 
   def photo_params
-    params.require(:photo).permit(:day, :park, :area, :body, :image, :image_cache, :latitude, :longitude, :user_id)
+    params.require(:photo).permit(:day, :park, :area, :body, :image, :latitude, :longitude)
   end
 
   def set_photo
-    @photo = current_user.posts.find(params[:id])
+    @photo = current_user.photos.find(params[:id])
   end
+
 end

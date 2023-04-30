@@ -1,0 +1,11 @@
+<%= search_form_for @q, url: url do |f| %>
+    <div class="input-group mb-3">
+        <%= f.search_field :day_eq, class: 'form-control', placeholder: '日付' %>
+        <%= f.search_field :park_cont, class: 'form-control', placeholder: 'パーク' %>
+        <%= f.search_field :area_cont, class: 'form-control', placeholder: 'エリア' %>
+        <%= f.search_field :body_cont, class: 'form-control', placeholder: '本文' %>
+      <div class="input-group-append">
+        <%= f.submit class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>

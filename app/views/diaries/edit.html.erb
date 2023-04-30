@@ -1,38 +1,9 @@
 <% content_for(:title, t('.title')) %>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h1><%= t'.title' %></h1>
-          <%= form_with model: @diary do |f| %>
-            <div class="form-group">
-                <%= f.label :day %>
-                <%= f.text_field :day, class: 'form-control' %>
-            </div>
-            <div class="form-group">
-                <%= f.label :title %>
-                <%= f.text_field :title, class: 'form-control' %>
-            </div>
-            <div class="form-group">
-                <%= f.label :body %>
-                <%= f.text_field :body, class: 'form-control' %>
-            </div>
-            <div class="form-group">
-                <%= f.label :lottely_facility %>
-                <%= f.text_field :lottely_facility, class: 'form-control' %>
-            </div>
-            <div class="form-group">
-                <%= f.label :lottely_time %>
-                <%= f.text_field :lottely_time, class: 'form-control' %>
-            </div>
-            <div class="form-group">
-                <%= f.label :lottely_result %>
-                <%= f.text_field :lottely_result, class: 'form-control' %>
-            </div>
-            <div class="actions">
-                <%= f.submit class: 'btn btn-primary' %>
-            </div>
-            <% end %>
-
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-1">
+      <h1 class="m-5"><%= t'.title' %></h1>
+      <%= render 'form', { diary: @diary } %>  
     </div>
   </div>
+</div>

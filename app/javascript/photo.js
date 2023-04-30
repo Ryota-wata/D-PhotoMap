@@ -3,7 +3,6 @@ let map;
 let marker = null;
 
 function initMap() {
-  geocoder = new google.maps.Geocoder()
 
   let map = new google.maps.Map(document.getElementById('map'), {
     zoom: 17,
@@ -27,11 +26,11 @@ function initMap() {
   // セレクトボックスが変更された時に呼ばれる関数
   function changeMap() {
     // 選択したテーマパークによって中心点と地図の種類を変更
-    if (parkSelect.value === 'land') {
+    if (parkSelect.value === 'ディズニーランド') {
       map.setCenter({lat: 35.632896, lng: 139.880394});
       map.setMapTypeId('satellite');
       map.setHeading(90);
-    } else if (parkSelect.value === 'sea') {
+    } else if (parkSelect.value === 'ディズニーシー') {
       map.setCenter({lat: 35.626739, lng: 139.884270});
       map.setMapTypeId('satellite');
       map.setHeading(180);
@@ -63,4 +62,3 @@ function initMap() {
 }
 
 window.initMap = initMap;
-  

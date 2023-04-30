@@ -1,0 +1,12 @@
+.header-logo {
+  margin: 10px;
+}
+
+.navigation .navbar-nav .nav-item a {
+  padding: 0 15px;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+}

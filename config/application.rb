@@ -40,6 +40,9 @@ module Dphotomap
       g.assets false
       g.helper false
       g.test_framework false
+      g.stylesheets false
+      g.javascripts false
+      g.channel assets: false
     end
     
     # i18nの導入
@@ -50,9 +53,8 @@ module Dphotomap
     config.time_zone = 'Tokyo'	
     config.active_record.default_timezone = :local
 
-    # application.js ファイルをプリコンパイルするための設定
-    config.assets.paths << Rails.root.join("app", "assets", "javascripts")
-    config.assets.precompile += %w( application.js )
+    # Google Maps APIの復号化
+    config.google_maps_api_key = Rails.application.credentials.google_maps_api_key
 
   end
 end

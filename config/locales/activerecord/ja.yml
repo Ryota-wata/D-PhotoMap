@@ -15,14 +15,17 @@ ja:
         park: 'パーク'
         area: 'エリア'
         body: '本文'
+        position: '撮影場所'
         image: '写真'
       diary:
         day: '日にち'
         title: 'タイトル'
         body: '本文'
-        lottely_facility: '抽選施設'
-        lottely_time: '抽選時間'
-        lottely_result: '抽選結果'
+      lottely:
+        day: '日にち'
+        facility: '抽選施設'
+        time: '抽選時間'
+        result: '抽選結果'
   errors:
     messages:
       carrierwave_processing_error: 処理できませんでした

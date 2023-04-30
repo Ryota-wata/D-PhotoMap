@@ -1,16 +1,15 @@
 <div class="top-wrapper">
     <div class="top-inner-text">
-        <h1>DPhotoMap</h1>
-        <p>パークで撮影した写真をマップにピン留めしよう</p>
+        <h1 class="m-5 text-center">DPhotoMap</h1>
+        <p class="m-5 text-center">パークで撮影した写真をマップにピン留めしよう</p>
     </div>
 
-    <div class="actions">
+    <div class="actions text-center p-2">
         <%= link_to 'ログイン', login_path, class: 'btn btn-primary' %>
-    </div>
-    <div class="actions">
-        <%= link_to '新期ユーザー登録', new_user_path, class: 'btn btn-primary' %>
-    </div>
-    <div class="actions">
-        <%= link_to 'アプリをのぞいてみる', map_path, class: 'btn btn-primary' %>
+        <span class="mx-4"></span>
+        <%= link_to 'ユーザー登録', new_user_path, class: 'btn btn-primary' %>
+    </div></br>
+    <div class="actions text-center pb-5">
+        <%= link_to 'アプリをのぞいてみる', '#', class: 'btn btn-primary' %>
     </div>
 </div>

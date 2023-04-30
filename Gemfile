@@ -48,6 +48,13 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "sorcery", '0.16.3'
-gem 'carrierwave', '2.0.2'
 gem 'rails-i18n'
 gem 'jquery-rails'
+gem "bootstrap"
+gem 'jquery-ui-rails'
+gem 'font-awesome-sass', '~> 5.11.2'
+gem 'jquery-rails'
+gem 'ransack', '2.3.0'
+gem 'pry-rails'
+gem 'gmaps4rails'
+gem 'geocoder'

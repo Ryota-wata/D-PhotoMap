@@ -1,28 +1,40 @@
-<div class="col-sm-12 col-lg-4 mb-3">
+<div class="col-sm-12 col-lg-3 mb-3">
   <div id="photo-id-<%= photo.id %>">
     <div class="card">
-      <%= image_tag 'photo_placeholder.png', class: 'card-img-top', size: '300x200' %>
+      <%= link_to photo_path(photo) do %>
+        <%= image_tag photo.image, class: 'card-img-top', size: '200x300' if photo.image.attached? %>
+      <% end %>
       <div class="card-body">
-        <h4 class="card-title">
-          <a href="#">
-            <%= photo.title %>
-          </a>
-        </h4>
-        <div class='mr10 float-right'>
-          <a href="#"><%= icon 'fas', 'trash', class: 'pr-1' %></a>
-          <a href="#"><%= icon 'fa', 'pen' %></a>
-        </div>
         <ul class="list-inline">
           <li class="list-inline-item">
-            <%= icon 'far', 'user' %>
-            <%= photo.user.decorate.full_name %>
-          </li>
-          <li class="list-inline-item">
-            <%= icon 'far', 'calendar' %>
-            <%= l photo.created_at, format: :long %>
+            <%= icon 'far', 'calendar-alt' %>
+            <%= l photo.day, format: :long %>
           </li>
         </ul>
-        <p class="card-text"><%= photo.body %></p>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <% if photo.park == "ディズニーランド" %>
+              <%= icon 'fab', 'fort-awesome' %>
+            <% elsif photo.park == "ディズニーシー" %>
+              <%= icon 'fas', 'mountain' %>
+            <% end %>
+            <%= photo.park %>
+          </li>
+        </ul>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <%= icon 'fas', 'map-marker-alt' %>
+            <%= photo.area %>
+          </li>
+        </ul>
+        <div class='btn-group'>
+          <%= link_to edit_photo_path(photo), id: "button-edit-#{photo.id}" do %>
+            <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
+          <% end %>
+          <%= link_to photo_path(photo), id: "button-delete-#{photo.id}", method: :delete, data: { confirm: t('.confirm') } do %>
+            <button type="button" class="btn btn-sm btn-outline-secondary">削除</button>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

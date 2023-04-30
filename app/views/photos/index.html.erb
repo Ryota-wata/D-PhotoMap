@@ -1,13 +1,19 @@
 <% content_for(:title, t('.title')) %>
-<!-- 掲示板一覧 -->
+<div class="container pt-3">
+  <form>
+    <h1 class="m-5"><%= t'.title' %></h1>
+    <%= render 'search', url: photos_path %>
+  </form>
+  <div>
+    <%= link_to t('.new'), new_photo_path, class: 'btn btn-primary' %>
+  </div></br>
   <div class="row">
     <div class="col-12">
       <div class="row">
-      <h1><%= t'.title' %></h1>
         <% if @photos.present? %>
           <%= render @photos %>
         <% else %>
-          <p><%= '写真なし' %></p>
+          <p><%= 'ここに写真が掲載されます' %></p>
         <% end %>
       </div>
     </div>

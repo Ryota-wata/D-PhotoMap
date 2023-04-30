@@ -20,8 +20,8 @@
                     <td><%= @photo.body %></td>
                 </tr>
             </table></br>
-            <div> 
-                <%= image_tag @photo.image, size: "800x500"  if @photo.image.attached? %>
+            <div class="photo-wrapper"> 
+                <%= image_tag @photo.image, size: "400x600", class: "photo"  if @photo.image.attached? %>
             </div></br>
             <table class="table table-hover">
                 <tr>
@@ -33,8 +33,9 @@
 
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
-                    <%= link_to "編集", edit_photo_path(@photo), class: 'btn btn-primary' %>
+                    <%= link_to "編集", edit_photo_path(@photo), class: 'btn btn-success' %>
                     <%= link_to "削除", photo_path(@photo), method: :delete, data: { confirm: t('.confirm') }, class: 'btn btn-danger' %>
+                    <%= link_to "一覧に戻る", photos_path, class: 'btn btn-primary' %>
                 </div>
             </div>
         </div>

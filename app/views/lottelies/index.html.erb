@@ -1,0 +1,37 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+    <h1 class="m-5"><%= t '.title' %></h1>
+    <%= link_to t('.new'), new_lottely_path, class: 'btn btn-primary' %></br>
+    </br>
+    <% 
+       all_results = Lottely.where(result: "当選").count
+       all_lottelies = Lottely.where.not(result: nil).count
+       winning_rate = all_results.to_f / all_lottelies * 100
+    %>
+    <h2>あなたの当選確率：<%= '%.2f' % winning_rate %>%</h2></br>
+
+        <table class="table table-hover">
+            <thead class="thead-default">
+                <tr>
+                    <th><%= Lottely.human_attribute_name(:day) %></th>
+                    <th><%= Lottely.human_attribute_name(:facility) %></th>
+                    <th><%= Lottely.human_attribute_name(:time) %></th>
+                    <th><%= Lottely.human_attribute_name(:result) %></th>
+                </tr>
+            </thead>
+        <tbody>
+            <% @lottelies.each do |lottely| %>
+                <tr>
+                    <td><%= lottely.day %></td>
+                    <td><%= lottely.facility %></td>
+                    <td><%= lottely.time.strftime('%H:%M') %></td>
+                    <td><%= lottely.result %></td>
+                    <td>
+                        <%= link_to '編集', edit_lottely_path(lottely), class: 'btn btn-success mr-3' %>
+                            <%= link_to '削除', lottely_path(lottely), method: :delete, data: { confirm: t('.confirm') }, class: 'btn btn-danger' %>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

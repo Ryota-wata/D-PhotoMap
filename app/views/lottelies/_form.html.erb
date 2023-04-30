@@ -1,0 +1,22 @@
+<%= form_with model: lottely, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="form-group">
+    <%= f.label :day %>
+    <%= f.date_field :day, class: 'form-control', type: 'date' %>
+  </div></br>
+  <div class="form-group">
+    <%= f.label :facility %>
+    <%= f.text_field :facility, class: 'form-control' %>
+  </div></br>
+  <div class="form-group">
+    <%= f.label :time %>
+    <%= f.time_field :time, class: 'form-control', type: 'time' %>
+  </div></br>
+  <div class="form-group">
+    <%= f.label :result %>
+    <%= f.select :result, [["当選"],["落選"]],{}, class: 'form-control' %>
+  </div></br>
+  <div class="actions">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

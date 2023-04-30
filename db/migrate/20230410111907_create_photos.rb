@@ -4,7 +4,7 @@ class CreatePhotos < ActiveRecord::Migration[6.1]
       t.date :day, null: false
       t.string :park, null: false
       t.string :area
-      t.string :body
+      t.text :body
       t.string :image
       t.float :latitude
       t.float :longitude

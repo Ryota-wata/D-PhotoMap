@@ -11,11 +11,24 @@ ja:
     new:
       title: 'ユーザー登録'
       to_login_page: 'ログインページへ'
+    create:
+      success: 'ユーザー登録が完了しました'
+      fail: 'ユーザー登録に失敗しました'
+  profiles:
+    show: 
+      title: 'プロフィール'
+    edit: 
+      title: 'プロフィール編集'
   user_sessions:
     new:
       title: 'ログイン'
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
+    create:
+      success: 'ログインしました'
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
   photos:
     index:
       title: 'アルバム'
@@ -25,6 +38,17 @@ ja:
       title: '写真編集'
     show:
       title: '写真詳細'
+      confirm: '削除します。よろしいですか？'
+    create:
+      success: '投稿しました'
+      fail: '投稿できませんでした'
+    update:
+      success: '更新しました'
+      fail: '更新できませんでした'
+    destroy:
+      success: '削除しました'
+    photo:
+      confirm: '削除します。よろしいですか？'
   diaries:
     new:
       title: '日記投稿'
@@ -32,5 +56,33 @@ ja:
       title: '日記編集'
     index:
       title: '日記一覧'
+      confirm: '削除します。よろしいですか？'
     show:
       title: '日記詳細'
+      confirm: '削除します。よろしいですか？'
+    create:
+      success: '投稿しました'
+      fail: '投稿できませんでした'
+    update:
+      success: '更新しました'
+      fail: '更新できませんでした'
+    destroy:
+      success: '削除しました'
+      confirm: '削除します。よろしいですか？'
+  lottelies:
+    new:
+      title: '抽選結果入力'
+    edit:
+      title: '抽選結果編集'
+    index:
+      title: '抽選結果'
+      confirm: '削除します。よろしいですか？'
+    create:
+      success: '投稿しました'
+      fail: '投稿できませんでした'
+    update:
+      success: '更新しました'
+      fail: '更新できませんでした'
+    destroy:
+      success: '削除しました'
+      confirm: '削除します。よろしいですか？'

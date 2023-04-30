@@ -1,18 +1,16 @@
 class UsersController < ApplicationController
-
+  skip_before_action :require_login, only: %i[new create]
+  
   def new
     @user = User.new
-  end
-
-  def edit
-    @user = User.find(params[:id])
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path, success: 'ユーザーを作成しました'
+      redirect_to login_path, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :new
     end
   end
@@ -20,8 +18,9 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to root_path, success: 'ユーザーを更新しました'
+      redirect_to root_path, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :edit
     end
   end
@@ -29,7 +28,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to root_path, danger: 'ユーザーを削除しました'
+    redirect_to root_path, success: t('.success')
   end
   
   private

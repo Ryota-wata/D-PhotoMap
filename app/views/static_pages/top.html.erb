@@ -1,15 +1,45 @@
-<div class="top-wrapper">
-    <div class="top-inner-text">
-        <h1 class="m-5 text-center">DPhotoMap</h1>
-        <p class="m-5 text-center">パークで撮影した写真をマップにピン留めしよう</p>
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light backgrount-image">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <h1 class="display-4 fw-normal">D PhotoMap</h1>
+      <p class="lead fw-normal style="display: inline;">パークで撮った写真をマップにピン留めしよう！</p>
+      <%= link_to 'ログイン', login_path, class:"btn btn-outline-secondary" %>
+      <%= link_to 'サインアップ', new_user_path, class:"btn btn-outline-secondary" %>
     </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  </div>
 
-    <div class="actions text-center p-2">
-        <%= link_to 'ログイン', login_path, class: 'btn btn-primary' %>
-        <span class="mx-4"></span>
-        <%= link_to 'ユーザー登録', new_user_path, class: 'btn btn-primary' %>
-    </div></br>
-    <div class="actions text-center pb-5">
-        <%= link_to 'アプリをのぞいてみる', '#', class: 'btn btn-primary' %>
+
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <%= image_tag 'walt2.jpg', :size => '700*500', class: 'd-block mx-lg-auto img-fluid', loading:'lazy' %>
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">D PhotoMapとは</h1>
+        <p class="lead">ディズニーに行くとたくさん写真を撮りたくなりますよね🎵</br>
+        撮影した写真を帰ってから見返していて、こんな経験はありませんか？</br>「この写真撮った場所どこだっけ？」</br>そんなお困りごとをこのアプリが解決します！</p>
+      </div>
     </div>
+  </div>
+</div>
+
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+      <%= image_tag 'catsle.jpg', :size => '700*500', class: 'd-block mx-lg-auto img-fluid', loading:'lazy' %>
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">マップに写真をピン留めしよう</h1>
+        <p class="lead">撮った写真をアルバムに保存する時に、マップにピン留めをすることができます。そうすることで、後日アルバムで写真を見返す時、撮影場所がすぐわかります。隠れミッキーの場所も全て覚えられるかも🎵</p>
+      </div>
+    </div>
+</div>
+
+<div class="container col-xxl-8 px-4 py-5">
+  <h4 class="m-5 text-center text-body-emphasis lh-1">他にも、日記を書いたり、ショーやパレードの抽選結果を記録したりもできます。</br>パークでの体験価値をより良いものにしましょう🎵</h4>
+</div>
+
+<div class="container col-xxl-8 px-4 py-5">
+  <h4 class="m-5 text-center text-body-emphasis lh-1">※本アプリ内で使用している写真は、開発者が撮影したものです。</h4>
 </div>

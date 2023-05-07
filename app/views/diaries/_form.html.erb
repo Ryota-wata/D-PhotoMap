@@ -16,6 +16,10 @@
     </div></br>
   
     <div class="actions">
-      <%= f.submit class: 'btn btn-primary' %>
+      <%= f.submit '投稿', class: 'btn btn-info rounded-pill px-3' %>
+    </div></br>
+
+    <div class="form-group">
+      <%= link_to "戻る", diaries_path, class: 'btn btn-outline-secondary d-inline-flex align-items-center' %> 
     </div>
 <% end %>

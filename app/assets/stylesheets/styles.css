@@ -1,12 +1,14 @@
-.header-logo {
-  margin: 10px;
-}
-
-.navigation .navbar-nav .nav-item a {
-  padding: 0 15px;
-}
-
-.photo {
+.backgrount-image {
+  background-image: url('top2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
   width: 100%;
-  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.inline {
+  display: inline;
 }

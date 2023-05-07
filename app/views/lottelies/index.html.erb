@@ -1,14 +1,15 @@
 <% content_for(:title, t('.title')) %>
 <div class="container">
     <h1 class="m-5"><%= t '.title' %></h1>
-    <%= link_to t('.new'), new_lottely_path, class: 'btn btn-primary' %></br>
+    <%= link_to '投稿', new_lottely_path, class: 'btn btn-info rounded-pill px-3' %></br>
     </br>
     <% 
-       all_results = Lottely.where(result: "当選").count
-       all_lottelies = Lottely.where.not(result: nil).count
-       winning_rate = all_results.to_f / all_lottelies * 100
+       user_lottelies = current_user.lottelies
+       election = user_lottelies.where(result: "当選").count
+       all_lottelies = user_lottelies.where.not(result: nil).count
+       winning_rate = all_lottelies > 0 ? election.to_f / all_lottelies * 100 : 0
     %>
-    <h2>あなたの当選確率：<%= '%.2f' % winning_rate %>%</h2></br>
+    <h3 class="fw-bold mb-0 fs-4">あなたの当選確率：<%= '%.2f' % winning_rate %>%</h3></br>
 
         <table class="table table-hover">
             <thead class="thead-default">
@@ -17,6 +18,7 @@
                     <th><%= Lottely.human_attribute_name(:facility) %></th>
                     <th><%= Lottely.human_attribute_name(:time) %></th>
                     <th><%= Lottely.human_attribute_name(:result) %></th>
+                    <th></th>
                 </tr>
             </thead>
         <tbody>

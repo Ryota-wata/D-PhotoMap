@@ -14,7 +14,7 @@ ja:
         day: '日にち'
         park: 'パーク'
         area: 'エリア'
-        body: '本文'
+        body: 'メモ'
         position: '撮影場所'
         image: '写真'
       diary:

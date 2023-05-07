@@ -21,7 +21,8 @@
                 </tr>
             </table></br>
             <div class="photo-wrapper"> 
-                <%= image_tag @photo.image, size: "400x600", class: "photo"  if @photo.image.attached? %>
+                <% image = MiniMagick::Image.open(@photo.image.path) %>
+                <%= image_tag @photo.image.url, class: "photo", height: (image.height.to_f / image.width.to_f * 500).round %>
             </div></br>
             <table class="table table-hover">
                 <tr>
@@ -35,7 +36,7 @@
                 <div class="col-md-6 col-md-offset-3">
                     <%= link_to "編集", edit_photo_path(@photo), class: 'btn btn-success' %>
                     <%= link_to "削除", photo_path(@photo), method: :delete, data: { confirm: t('.confirm') }, class: 'btn btn-danger' %>
-                    <%= link_to "一覧に戻る", photos_path, class: 'btn btn-primary' %>
+                    <%= link_to "一覧に戻る", photos_path, class: 'btn btn-outline-secondary d-inline-flex align-items-center' %>
                 </div>
             </div>
         </div>
@@ -47,10 +48,10 @@
     let latitude = <%= @photo.latitude %>;
     let longitude = <%= @photo.longitude %>;
     let location = {lat: latitude, lng: longitude};
-    let map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 17,
+    map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 18,
       center: location,
-      heading: 90,
+      heading: 180,
       mapTypeId: 'satellite',
       restriction: {
         latLngBounds: {

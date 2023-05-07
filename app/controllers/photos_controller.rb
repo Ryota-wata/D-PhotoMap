@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :set_photo, only: [:edit, :update, :destroy]
+  before_action :set_photo, only: [:edit, :show, :update, :destroy]
 
   def new
     @photo = Photo.new
@@ -8,13 +8,11 @@ class PhotosController < ApplicationController
   def edit ;end
 
   def index
-    @q = Photo.ransack(params[:q])
+    @q = current_user.photos.ransack(params[:q])
     @photos = @q.result(distinct: true).includes(:user).order(created_at: :desc)
   end
 
-  def show
-    @photo = Photo.find(params[:id]) 
-  end
+  def show ;end
 
   def create
     @photo = current_user.photos.build(photo_params)
@@ -43,7 +41,7 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:day, :park, :area, :body, :image, :latitude, :longitude)
+    params.require(:photo).permit(:day, :park, :area, :body, :image, :image_cache, :latitude, :longitude)
   end
 
   def set_photo

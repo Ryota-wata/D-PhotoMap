@@ -16,15 +16,11 @@
 // const imagePath = (name) => images(name, true)
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+// require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
 import "photo"
 
-//= require gmaps/google
-//= require underscore
-//= require gmaps/gmaps.base.js
-//= require gmaps/gmaps.polygon.js
-//= require gmaps/gmaps.google.js
+
 

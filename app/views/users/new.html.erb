@@ -1,9 +1,15 @@
 <% content_for(:title, t('.title')) %>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <h1 class="m-5"><%= t '.title' %></h1>
-            <%= form_with model: @user, local: true do |f| %>
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold text-body-emphasis lh-1 mb-3">サインアップ</h1>
+            <p class="col-lg-10 fs-4">「サインアップ」といえば、2023年4月9日に惜しまれつつも終了した「ドリーミングアップ」というパレードがありました！</br>35周年を代表する最高のパレードでしたね🎵</p>
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+            <%= image_tag 'dream.jpg', :size => '200*100', class: 'd-block mx-lg-auto img-fluid', loading:'lazy' %>
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+            <%= form_with model: @user, class: "p-4 p-md-5 border rounded-3 bg-body-tertiary", local: true do |f| %>
                 <% if @user.errors.any? %>
                     <div id="error_explanation">
                         <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -14,29 +20,32 @@
                         </ul>
                     </div>
                 <% end %>
-                <div class="form-group">
+                <div class="mb-3">
                     <%= f.label :username %>
                     <%= f.text_field :username, class: 'form-control' %>
                 </div></br>
-                <div class="form-group">
+                <div class="mb-3">
                     <%= f.label :email %>
                     <%= f.text_field :email, class: 'form-control' %>
                 </div></br>
-                <div class="form-group">
+                <div class="mb-3">
                     <%= f.label :password %>
                     <%= f.password_field :password, class: 'form-control' %>
                 </div></br>
-                <div class="form-group">
+                <div class="mb-3">
                     <%= f.label :password_confirmation %>
                     <%= f.password_field :password_confirmation, class: 'form-control' %>
                 </div></br>
                 <div class="actions">
-                    <%= f.submit '登録する', class: 'btn btn-primary' %>
+                    <%= f.submit 'サインアップ', class: 'btn btn-primary' %>
+                </div>
+                <hr class="my-4">
+                <small class="text-body-secondary">サインアップをクリックすると、利用規約に同意したことになります。</small></br></br>
+                <div class='text-center'>
+                    <%= link_to 'ログインページへ', login_path %>
                 </div>
             <% end %>
-            <div class='text-center'>
-                <%= link_to 'ログインページへ', login_path %>
-            </div>
+            
         </div>
     </div>
 </div>

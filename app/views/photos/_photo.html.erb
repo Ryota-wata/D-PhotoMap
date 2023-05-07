@@ -2,9 +2,9 @@
   <div id="photo-id-<%= photo.id %>">
     <div class="card">
       <%= link_to photo_path(photo) do %>
-        <%= image_tag photo.image, class: 'card-img-top', size: '200x300' if photo.image.attached? %>
+        <%= image_tag photo.image.url, class: 'card-img-top', size: '200x300' %>
       <% end %>
-      <div class="card-body">
+      <div class="card-body text-center">
         <ul class="list-inline">
           <li class="list-inline-item">
             <%= icon 'far', 'calendar-alt' %>
@@ -28,6 +28,9 @@
           </li>
         </ul>
         <div class='btn-group'>
+          <%= link_to photo_path(photo), id: "button-show-#{photo.id}" do %> 
+            <button type="button" class="btn btn-sm btn-outline-secondary">詳細</button>
+          <% end %>
           <%= link_to edit_photo_path(photo), id: "button-edit-#{photo.id}" do %>
             <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
           <% end %>

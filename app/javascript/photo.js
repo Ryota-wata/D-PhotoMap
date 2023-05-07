@@ -1,14 +1,12 @@
-let center = { lat: 35.6329, lng: 139.8804 };
 let map;
-let marker = null;
+let marker;
 
 function initMap() {
-
-  let map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 17,
-    center: center,
-    heading: 90,
+    map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 18,
+    center: { lat: 35.6329, lng: 139.8804 },
     mapTypeId: 'satellite',
+    heading: 180,
     restriction: {
       latLngBounds: {
         north: 35.63666632775198,
@@ -29,36 +27,34 @@ function initMap() {
     if (parkSelect.value === 'ディズニーランド') {
       map.setCenter({lat: 35.632896, lng: 139.880394});
       map.setMapTypeId('satellite');
-      map.setHeading(90);
     } else if (parkSelect.value === 'ディズニーシー') {
-      map.setCenter({lat: 35.626739, lng: 139.884270});
+      map.setCenter({lat: 35.62576389318218, lng: 139.88454133123065});
       map.setMapTypeId('satellite');
-      map.setHeading(180);
     }
   }
 
-  // イベントリスナーを登録
+  // 選択したパークによって地図を変更
   parkSelect.addEventListener('change', changeMap);
 
-  map.addListener('click', function(e) {
-    if (marker !== null) {
-      // マーカーをマップから削除
+  //mapをクリックしたときのイベントを設定
+  google.maps.event.addListener(map, 'click', mylistener);
+
+  //mapをクリックしたときのイベント
+  function mylistener(event) {
+    //クリックした場所にマーカーを設置
+    if (marker) {
       marker.setMap(null);
-      marker = null;
-      return;
     }
-  
-    // マーカーを生成
     marker = new google.maps.Marker({
-      position: e.latLng,
+      position: event.latLng,
       map: map,
     });
-
+    
     // 緯度と経度を取得して、フォームに設定
-   document.getElementById("photo_latitude").value = marker.getPosition().lat();
-   document.getElementById("photo_longitude").value = marker.getPosition().lng();
-  });
-
+    document.getElementById("photo_latitude").value = marker.getPosition().lat();
+    document.getElementById("photo_longitude").value = marker.getPosition().lng();
+  };
 }
 
 window.initMap = initMap;
+

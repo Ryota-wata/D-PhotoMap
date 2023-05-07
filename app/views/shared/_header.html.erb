@@ -1,26 +1,17 @@
-<header>
-  <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto main-nav align-items-center">
-        <div class="header-logo">
-          <h2>D PhotoMap</h2>
-        </div>
-        <li class="nav-item">
-          <%= link_to 'アルバム', photos_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to '日記', diaries_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to '抽選結果', lottelies_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'プロフィール', profile_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'ログアウト', logout_path, method: :delete, data: { confirm: 'ログアウトしますか？' }, class: 'nav-link' %>
-        </li>
+<h1 class="visually-hidden">Headers examples</h1>
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <span class="fs-4">D PhotoMap</span>
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><%= link_to 'HOME', root_path, class:"nav-link" %></li>
+        <li class="nav-item"><%= link_to 'アルバム', photos_path, class:"nav-link" %></li>
+        <li class="nav-item"><%= link_to '日記', diaries_path, class:"nav-link" %></li>
+        <li class="nav-item"><%= link_to '抽選結果', lottelies_path, class:"nav-link" %></li>
+        <li class="nav-item"><%= link_to 'プロフィール', profile_path, class:"nav-link" %></li>
+        <li class="nav-item"><%= link_to 'ログアウト', logout_path, class:"nav-link", method: :delete %></li>
       </ul>
-    </div>
-  </nav>
-</header>
+    </header>
+</div>

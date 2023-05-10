@@ -61,5 +61,5 @@ gem 'jquery-rails'
 gem 'ransack', '2.3.0'
 gem 'pry-rails'
 gem 'gmaps4rails'
-gem 'geocoder'
 gem 'carrierwave'
+

@@ -84,6 +84,3 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: dphotomap_production
-  username: dphotomap
-  password: <%= ENV['DPHOTOMAP_DATABASE_PASSWORD'] %>

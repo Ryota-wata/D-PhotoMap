@@ -22,7 +22,7 @@
             </table></br>
             <div class="photo-wrapper"> 
                 <% image = MiniMagick::Image.open(@photo.image.path) %>
-                <%= image_tag @photo.image.url, class: "photo", height: (image.height.to_f / image.width.to_f * 500).round %>
+                <%= image_tag @photo.image.url, class: "photo", style: "max-width: 100%; height: auto;" %>
             </div></br>
             <table class="table table-hover">
                 <tr>

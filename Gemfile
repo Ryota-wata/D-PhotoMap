@@ -62,4 +62,5 @@ gem 'ransack', '2.3.0'
 gem 'pry-rails'
 gem 'gmaps4rails'
 gem 'carrierwave'
+gem 'sitemap_generator'
 

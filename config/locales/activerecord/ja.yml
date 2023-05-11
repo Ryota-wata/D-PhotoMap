@@ -24,8 +24,8 @@ ja:
       lottely:
         day: '日にち'
         facility: '抽選施設'
-        time: '抽選時間'
-        result: '抽選結果'
+        time: '時間'
+        result: '結果'
   errors:
     messages:
       carrierwave_processing_error: 処理できませんでした

@@ -1,7 +1,7 @@
 <% content_for(:title, t('.title')) %>
 <div class="container">
-    <h1 class="m-5"><%= t '.title' %></h1>
-    <%= link_to '投稿', new_lottely_path, class: 'btn btn-info rounded-pill px-3' %></br>
+    <h1 class="m-5 fw-bold"><%= t '.title' %></h1>
+    <%= link_to '投稿', new_lottely_path, class: 'btn btn-info rounded-pill px-3 btn-sm' %></br>
     </br>
     <% 
        user_lottelies = current_user.lottelies
@@ -11,6 +11,7 @@
     %>
     <h3 class="fw-bold mb-0 fs-4">あなたの当選確率：<%= '%.2f' % winning_rate %>%</h3></br>
 
+    <div class="table-responsive">
         <table class="table table-hover">
             <thead class="thead-default">
                 <tr>
@@ -21,19 +22,20 @@
                     <th></th>
                 </tr>
             </thead>
-        <tbody>
-            <% @lottelies.each do |lottely| %>
-                <tr>
-                    <td><%= lottely.day %></td>
-                    <td><%= lottely.facility %></td>
-                    <td><%= lottely.time.strftime('%H:%M') %></td>
-                    <td><%= lottely.result %></td>
-                    <td>
-                        <%= link_to '編集', edit_lottely_path(lottely), class: 'btn btn-success mr-3' %>
+            <tbody>
+                <% @lottelies.each do |lottely| %>
+                    <tr>
+                        <td><%= lottely.day %></td>
+                        <td><%= lottely.facility %></td>
+                        <td><%= lottely.time.strftime('%H:%M') %></td>
+                        <td><%= lottely.result %></td>
+                        <td>
+                            <%= link_to '編集', edit_lottely_path(lottely), class: 'btn btn-success mr-3' %>
                             <%= link_to '削除', lottely_path(lottely), method: :delete, data: { confirm: t('.confirm') }, class: 'btn btn-danger' %>
-                    </td>
-                </tr>
-            <% end %>
-        </tbody>
-    </table>
+                        </td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
 </div>

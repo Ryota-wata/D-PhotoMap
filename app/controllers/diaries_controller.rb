@@ -16,7 +16,7 @@ class DiariesController < ApplicationController
     
     def create
         @diary = current_user.diaries.build(diary_params)
-        sent_tags = params[:diary][:name].split('、')
+        sent_tags = params[:diary][:tag].split('、')
         if @diary.save
             @diary.save_tag(sent_tags)
             redirect_to diaries_path, success: t('.success')

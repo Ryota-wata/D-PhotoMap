@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   resources :photos, only: [:new, :index, :create, :edit, :update, :destroy, :show]
   resources :diaries, only: [:new, :index, :create, :edit, :update, :destroy, :show]
   resources :lottelies, only: [:new, :index, :create, :edit, :update, :destroy]
+  resources :tags do
+    get 'diaries', to: 'diaries#search'
+  end
 end

@@ -1,8 +1,19 @@
 <% content_for(:title, t('.title')) %>
 <div class="container">
-    <h1 class="m-5 fw-bold"><%= t '.title' %></h1>
-    <%= link_to '投稿', new_lottely_path, class: 'btn btn-info rounded-pill px-3 btn-sm' %></br>
-    </br>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light"><%= t'.title' %></h1></br>
+                <p class="lead text-body-secondary">当選しやすい曜日や時間帯を分析しよう</p>
+            </div>
+            <div>
+                <%= render 'search', url: lottelies_path %>
+            </div>
+            <div>
+                <%= link_to '投稿', new_lottely_path, class: 'btn btn-info rounded-pill px-3 btn-sm' %>
+            </div>
+        </div>
+    </section>
     <% 
        user_lottelies = current_user.lottelies
        election = user_lottelies.where(result: "当選").count
@@ -16,6 +27,7 @@
             <thead class="thead-default">
                 <tr>
                     <th><%= Lottely.human_attribute_name(:day) %></th>
+                    <th>曜日</th>
                     <th><%= Lottely.human_attribute_name(:facility) %></th>
                     <th><%= Lottely.human_attribute_name(:time) %></th>
                     <th><%= Lottely.human_attribute_name(:result) %></th>
@@ -26,6 +38,7 @@
                 <% @lottelies.each do |lottely| %>
                     <tr>
                         <td><%= lottely.day %></td>
+                        <td><%= lottely.day.strftime("%A") %></td>
                         <td><%= lottely.facility %></td>
                         <td><%= lottely.time.strftime('%H:%M') %></td>
                         <td><%= lottely.result %></td>

@@ -3,10 +3,11 @@
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="fw-light"><%= t'.title' %></h1></br>
-          <p class="lead text-body-secondary">パークで体験した思い出を日記に綴ろう！</br>タグを設定すると絞り込み検索ができます。</p>
+          <p class="lead text-body-secondary">パークで体験した楽しかったことや感動したことを日記に綴ろう</p>
         </div>
         <div>
           <%= link_to '投稿', new_diary_path, class: 'btn btn-info rounded-pill px-3' %>
+          <%= link_to '戻る', diaries_path, class: 'btn btn-outline-secondary d-inline-flex align-items-center' %>
         </div>
       </div>
 </section>
@@ -14,19 +15,8 @@
 <div class="container pt-3">
   <div class="row">
     <div class="col-12">
-      <% if @diaries.present? %>
-        <div class="row">
-          <%= render @diaries %>
-        </div>
-      <% else %>
-          <p><%= 'ここに日記が掲載されます' %></p>
-      <% end %>
+        <%= link_to tag.name, tag_diaries_path(tag_id: tag.id), class: "badge badge-warning" %>
+        <%= render @diaries %>
     </div>
   </div>
 </div>
-
-          
-
-
-
-

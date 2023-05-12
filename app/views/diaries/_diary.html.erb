@@ -6,6 +6,13 @@
         <div class="mb-1 text-body-secondary"><%= diary.day %></div>
         <p class="card-text mb-auto"><%= diary.body %></p>
       </div>
+      <div class="px-3 pt-3 pb-2 d-flex justify-content-between">
+        <div class="btn-group">
+          <% diary.tags.each do |tag| %>
+            <%= link_to tag.name, tag_diaries_path(tag_id: tag.id), class: "badge rounded-pill bg-info text-decoration-none text-white" %>
+          <% end %>
+        </div>
+      </div>
       <div class="px-3 pb-3 d-flex justify-content-end">
         <%= link_to '編集', edit_diary_path(diary), class: 'btn btn-success mr-3' %>
           <%= link_to '削除', diary_path(diary), method: :delete, data: { confirm: t('.confirm') }, class: 'btn btn-danger' %>

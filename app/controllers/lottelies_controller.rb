@@ -2,7 +2,12 @@ class LotteliesController < ApplicationController
   before_action :set_lottely, only: [:edit, :update, :destroy]
 
   def index
-    @lottelies = current_user.lottelies.order(day: :desc)
+    @q = current_user.lottelies.ransack(params[:q])
+    if params[:q] && params[:q][:day_wday].present?
+      day_wday = params[:q][:day_wday].to_i
+      @q = @q.where("strftime('%w', day) = ?", day_wday)
+    end
+    @lottelies = @q.result(distinct: true).includes(:user).order(created_at: :desc)
   end
 
   def new

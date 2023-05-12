@@ -14,6 +14,11 @@
       <%= f.label :body %>
       <%= f.text_area :body, class: 'form-control' %>
     </div></br>
+
+    <div class="form-group">
+      <%= f.label :'タグ' %>
+      <%= f.text_field :tag, value: @tag_list, class: 'form-control', placeholder: "、で区切って入力してください" %>
+    </div></br>
   
     <div class="actions">
       <%= f.submit '投稿', class: 'btn btn-info rounded-pill px-3' %>

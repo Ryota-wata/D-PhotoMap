@@ -69,6 +69,10 @@ ja:
     destroy:
       success: '削除しました'
       confirm: '削除します。よろしいですか？'
+    search:
+      title: 'タグ検索'
+    diary:
+      confirm: '削除します。よろしいですか？'
   lottelies:
     new:
       title: '抽選結果入力'

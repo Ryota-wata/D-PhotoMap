@@ -1,0 +1,11 @@
+<%= search_form_for @q, url: url do |f| %>
+  <div class="input-group mb-3">
+      <%= f.search_field :day_eq, class: 'form-control', placeholder: '日にち(半角数字)' %>
+      <%= f.search_field :facility_cont, class: 'form-control', placeholder: '抽選施設' %>
+      <%= f.search_field :time_cont, class: 'form-control', placeholder: '抽選時間' %>
+      <%= f.search_field :result_cont, class: 'form-control', placeholder: '抽選結果' %>
+    <div class="input-group-append">
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

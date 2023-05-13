@@ -90,3 +90,14 @@ ja:
     destroy:
       success: '削除しました'
       confirm: '削除します。よろしいですか？'
+  password_resets:
+    new:
+      title: 'パスワード再設定'
+    edit:
+      title: 'パスワード再設定'
+    create:
+      success: 'パスワード再設定メールを送信しました'
+      fail: 'パスワード再設定メールの送信に失敗しました'
+    update:
+      success: 'パスワードを再設定しました'
+      fail: 'パスワードの再設定に失敗しました'

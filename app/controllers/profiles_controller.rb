@@ -12,6 +12,12 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(current_user.id)
+    @user.destroy!
+    redirect_to root_path, success: '退会しました'
+  end
+
   def show; end
 
   private

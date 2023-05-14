@@ -1,34 +1,34 @@
 <div class="d-flex justify-content-center">
-<%= search_form_for @q, url: url do |f| %>
-  <div class="input-group mb-3">
-    <div class="form-group">
-      <%= f.label :day_eq, "日にち" %>
-      <%= f.search_field :day_eq, class: 'form-control', type: 'date' %>
+  <%= search_form_for @q, url: url do |f| %>
+    <div class="input-group mb-3">
+      <div class="form-group">
+        <%= f.label :day, "日にち" %>
+        <%= f.search_field :day_eq, class: 'form-control', type: 'date' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :day_of_week, "曜日" %>
+        <%= f.select :day_of_week_eq, [ [""],["月曜日"],["火曜日"],["水曜日"],["木曜日"],["金曜日"],["土曜日"],["日曜日"]],{}, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :facility, "施設" %>
+        <%= f.search_field :facility_cont, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :time, "抽選時間" %>
+        <%= f.search_field :time_eq, class: 'form-control', type: 'time' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :start_time, "開演時間" %>
+        <%= f.search_field :start_time_eq, class: 'form-control', type: 'time' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :result, "抽選結果" %>
+        <%= f.select :result_cont, [[""],["当選"],["落選"]],{}, class: 'form-control' %> 
+      </div>
+      <div class="input-group-append">
+        </br>
+        <%= f.submit class: 'btn btn-primary' %>
+      </div>
     </div>
-    <div class="form-group">
-      <%= f.label :day_of_week_eq, "曜日" %>
-      <%= f.select :day_of_week_eq, [ [""],["月曜日"],["火曜日"],["水曜日"],["木曜日"],["金曜日"],["土曜日"],["日曜日"]],{}, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :facility_cont, "施設" %>
-      <%= f.search_field :facility_cont, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :time_eq, "抽選時間" %>
-      <%= f.search_field :time_eq, class: 'form-control', type: 'time' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :start_time_eq, "開演時間" %>
-      <%= f.search_field :start_time_eq, class: 'form-control', type: 'time' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :result_eq, "抽選結果" %>
-      <%= f.select :result_cont, [[""],["当選"],["落選"]],{}, class: 'form-control' %> 
-    </div>
-    <div class="input-group-append">
-      </br>
-      <%= f.submit class: 'btn btn-primary' %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
 </div>

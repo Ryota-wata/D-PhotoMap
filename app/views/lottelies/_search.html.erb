@@ -10,7 +10,7 @@
         <%= f.select :day_of_week_eq, [ [""],["月曜日"],["火曜日"],["水曜日"],["木曜日"],["金曜日"],["土曜日"],["日曜日"]],{}, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :facility, "施設" %>
+        <%= f.label :facility, "抽選施設" %>
         <%= f.search_field :facility_cont, class: 'form-control' %>
       </div>
       <div class="form-group">
@@ -22,7 +22,7 @@
         <%= f.search_field :start_time_eq, class: 'form-control', type: 'time' %>
       </div>
       <div class="form-group">
-        <%= f.label :result, "抽選結果" %>
+        <%= f.label :result, "結果" %>
         <%= f.select :result_cont, [[""],["当選"],["落選"]],{}, class: 'form-control' %> 
       </div>
       <div class="input-group-append">

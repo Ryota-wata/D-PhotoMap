@@ -27,7 +27,7 @@ ja:
         facility: '抽選施設'
         start_time: '開演時間'
         time: '抽選時間'
-        result: '抽選結果'
+        result: '結果'
       tag:
         name: 'タグ名'
   errors:

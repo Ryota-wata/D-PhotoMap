@@ -65,4 +65,5 @@ gem 'gmaps4rails'
 gem 'carrierwave'
 gem 'sitemap_generator'
 gem 'config'
+gem 'dotenv-rails'
 

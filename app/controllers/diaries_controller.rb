@@ -11,7 +11,7 @@ class DiariesController < ApplicationController
     end
 
     def edit
-        @tag_list = @diary.tags.pluck(:name).join(',') 
+        @tag_list = @diary.tags.pluck(:name).join('、') 
     end
     
     def create

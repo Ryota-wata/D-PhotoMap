@@ -23,7 +23,9 @@ ja:
         body: '本文'
       lottely:
         day: '日にち'
+        day_of_week: '曜日'
         facility: '抽選施設'
+        start_time: '開演時間'
         time: '抽選時間'
         result: '抽選結果'
       tag:

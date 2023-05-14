@@ -43,7 +43,7 @@ class LotteliesController < ApplicationController
   private
 
   def lottely_params
-    params.require(:lottely).permit(:day, :facility, :time, :result)
+    params.require(:lottely).permit(:day, :day_of_week, :facility, :time, :start_time, :result)
   end
 
   def set_lottely

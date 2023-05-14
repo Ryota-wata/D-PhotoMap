@@ -27,9 +27,10 @@
             <thead class="thead-default">
                 <tr>
                     <th><%= Lottely.human_attribute_name(:day) %></th>
-                    <th>曜日</th>
+                    <th><%= Lottely.human_attribute_name(:day_of_week) %></th>
                     <th><%= Lottely.human_attribute_name(:facility) %></th>
                     <th><%= Lottely.human_attribute_name(:time) %></th>
+                    <th><%= Lottely.human_attribute_name(:start_time) %></th>
                     <th><%= Lottely.human_attribute_name(:result) %></th>
                     <th></th>
                 </tr>
@@ -38,9 +39,10 @@
                 <% @lottelies.each do |lottely| %>
                     <tr>
                         <td><%= lottely.day %></td>
-                        <td><%= lottely.day.strftime("%A") %></td>
+                        <td><%= lottely.day_of_week %></td>
                         <td><%= lottely.facility %></td>
                         <td><%= lottely.time.strftime('%H:%M') %></td>
+                        <td><%= lottely.start_time.strftime('%H:%M') %></td>
                         <td><%= lottely.result %></td>
                         <td>
                             <%= link_to '編集', edit_lottely_path(lottely), class: 'btn btn-success mr-3' %>

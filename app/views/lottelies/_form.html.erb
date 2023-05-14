@@ -5,12 +5,20 @@
     <%= f.date_field :day, class: 'form-control', type: 'date' %>
   </div></br>
   <div class="form-group">
+    <%= f.label :day_of_week %>
+    <%= f.select :day_of_week, [["月曜日"],["火曜日"],["水曜日"],["木曜日"],["金曜日"],["土曜日"],["日曜日"]],{}, class: 'form-control' %>
+  </div></br>
+  <div class="form-group">
     <%= f.label :facility %>
     <%= f.text_field :facility, class: 'form-control' %>
   </div></br>
   <div class="form-group">
     <%= f.label :time %>
     <%= f.time_field :time, class: 'form-control', type: 'time' %>
+  </div></br>
+  <div class="form-group">
+    <%= f.label :start_time %>
+    <%= f.time_field :start_time, class: 'form-control', type: 'time' %>
   </div></br>
   <div class="form-group">
     <%= f.label :result %>

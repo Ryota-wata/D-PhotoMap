@@ -1,16 +1,29 @@
-<h1 class="visually-hidden">Headers examples</h1>
 <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <span class="fs-4 text-primary">D PhotoMap</span>
-      </a>
-
-      <ul class="nav nav-pills">
-        <li class="nav-item"><%= link_to 'アルバム', photos_path, class:"nav-link" %></li>
-        <li class="nav-item"><%= link_to '日記', diaries_path, class:"nav-link" %></li>
-        <li class="nav-item"><%= link_to '抽選結果', lottelies_path, class:"nav-link" %></li>
-        <li class="nav-item"><%= link_to 'プロフィール', profile_path, class:"nav-link" %></li>
-        <li class="nav-item"><%= link_to 'ログアウト', logout_path, class:"nav-link", method: :delete, data: { confirm: 'ログアウトしますか？' } %></li>
-      </ul>
-    </header>
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <span class="fs-4">D PhotoMap</span>
+    </a>
+    <ul class="nav nav-pills">
+      <div>
+        <li class="nav-item"><i class="fas fa-images"></i></li>
+        <li><%= link_to 'アルバム', photos_path, class:"nav-link" %></li>
+      </div>
+      <div>
+        <li class="nav-item"><i class="far fa-file-alt"></i></li>
+        <li><%= link_to '日記', diaries_path, class:"nav-link" %></li>
+      </div>
+      <div>
+        <li class="nav-item"><i class="fas fa-dice"></i></li>
+        <li><%= link_to '抽選結果', lottelies_path, class:"nav-link" %></li>
+      </div>
+      <div>
+        <li class="nav-item"><i class="fas fa-user-circle"></i></li>
+        <li><%= link_to 'プロフィール', profile_path, class:"nav-link" %></li>
+      </div>
+      <div>
+        <li class="nav-item"><i class="fas fa-sign-out-alt"></i></li>
+        <li><%= link_to 'ログアウト', logout_path, class:"nav-link", method: :delete, data: { confirm: 'ログアウトしますか？' } %></li>
+      </div>
+    </ul>
+  </header>
 </div>

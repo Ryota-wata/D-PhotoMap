@@ -54,11 +54,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "sorcery"
 gem 'rails-i18n'
-gem 'jquery-rails'
 gem "bootstrap"
-gem 'jquery-ui-rails'
 gem 'font-awesome-sass', '~> 5.11.2'
-gem 'jquery-rails'
 gem 'ransack', '2.3.0'
 gem 'pry-rails'
 gem 'gmaps4rails'
@@ -66,4 +63,3 @@ gem 'carrierwave'
 gem 'sitemap_generator'
 gem 'config'
 gem 'dotenv-rails'
-

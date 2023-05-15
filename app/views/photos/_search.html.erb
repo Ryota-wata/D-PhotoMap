@@ -2,7 +2,7 @@
     <div class="input-group mb-3">
         <%= f.search_field :day_eq, class: 'form-control', type: 'date' %>
         <%= f.select :park_cont, options_for_select(['', 'ディズニーランド', 'ディズニーシー']), {}, { class: 'form-control', include_blank: 'パーク' } %>
-        <%= f.search_field :area_cont, class: 'form-control', placeholder: 'エリア' %>
+        <%= f.select :area_eq, [[''],['--------ディズニーランド--------'],['ワールドバザール'],['アドベンチャーランド'],['ウエスタンランド'],['クリッターカントリー'],['ファンタジーランド'],['トゥーンタウン'],['トゥモローランド'],['--------ディズニーシー-----------'],['メディテレーニアンハーバー'],['アメリカンウォーターフロント'],['ポートディスカバリー'],['ロストリバーデルタ'],['マーメイドラグーン'],['アラビアンコースト'],['ミステリアスアイランド']],{},class: 'form-control'%>
         <%= f.search_field :body_cont, class: 'form-control', placeholder: 'メモ' %>
       <div class="input-group-append">
         <%= f.submit class: 'btn btn-primary' %>

@@ -1,1 +1,2 @@
-
+default_url_options:
+  host: 'dphotomap.herokuapp.com'

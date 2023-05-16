@@ -101,3 +101,22 @@ ja:
     update:
       success: 'パスワードを再設定しました'
       fail: 'パスワードの再設定に失敗しました'
+  expenses:
+    new:
+      title: '出費入力'
+    edit:
+      title: '出費編集'
+    show:
+      title: '出費詳細'
+    index:
+      title: '出費管理'
+    create:
+      success: '登録しました'
+      fail: '登録できませんでした'
+    update:
+      success: '更新しました'
+      fail: '更新できませんでした'
+    destroy:
+      success: '削除しました'
+    expense:
+      confirm: '削除します。よろしいですか？'

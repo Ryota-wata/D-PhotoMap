@@ -15,4 +15,6 @@ Rails.application.routes.draw do
     get 'diaries', to: 'diaries#search'
   end
   resources :password_resets, only: [:new, :create, :edit, :update]
+  resources :expenses, only: [:new, :index, :create, :edit, :update, :destroy, :show]
+
 end

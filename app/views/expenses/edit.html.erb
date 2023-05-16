@@ -1,0 +1,36 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="m-5 text-center"><%= t'.title' %></h1>
+        <h2>総額</h2>
+        <%= form_with model: @expense, url: expense_path(@expense), method: :patch, local: true do |f| %>
+          <div class="form-group row">
+            <%= f.label :day, class: 'col-sm-2 col-form-label' %>
+            <div class="input-group">
+              <%= f.date_field :day, class: 'form-control', type: 'date' %>
+            </div>
+            <%= f.label :total, class: 'col-sm-2 col-form-label' %>
+            <div class="input-group">
+              <%= f.text_field :total, placeholder: '総支出', class: 'form-control' %>
+              <span class="input-group-text">円</span>
+            </div>
+          </div></br></br>
+
+          <h2>費目フォーム</h2>
+          <%= f.fields_for :expense_items do |i| %>
+            <%= render 'expense_item_fields', f: i %>
+          <% end %></br>
+
+          <div id="detail-association-insertion-point"></div></br></br>
+
+          <%= link_to_add_association '追加', f, :expense_items, class: 'btn btn-warning',
+          data: {
+          association_insertion_node: '#detail-association-insertion-point',
+          association_insertion_method: 'after' }%>　追加を押すと費目フォームが追加されます。</br></br>
+          <%= f.submit '保存', class: 'btn btn-info rounded-pill px-3' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

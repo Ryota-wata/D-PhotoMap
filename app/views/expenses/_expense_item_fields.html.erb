@@ -1,0 +1,36 @@
+<div class="row g-2 align-items-center nested-fields">
+  <div class="col-md-3 field">
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: '費目', class: 'form-control' %>
+  </div>
+  <div class="col-md-2 field">
+    <%= f.label :price %>
+    <div class="input-group">
+      <%= f.text_field :price, placeholder: '価格', class: 'form-control price' %>
+      <span class="input-group-text">円</span>
+    </div>
+  </div>
+  <div class="col-md-2 field">
+    <%= f.label :quantity %>
+    <div class="input-group">
+      <%= f.number_field :quantity, placeholder: '数量', class: 'form-control quantity' %>
+      <span class="input-group-text">個</span>
+    </div>
+  </div>
+  <div class="col-md-2 field">
+    <%= f.label :subtotal %>
+    <div class="input-group">
+      <%= f.text_field :subtotal, placeholder: '小計', class: 'form-control subtotal' %>
+      <span class="input-group-text">円</span>
+    </div>
+  </div>
+  <div class="col-md-3 field">
+    </br>
+    <% if action_name != 'show' %>
+      <%= link_to_remove_association '削除', f, class: "btn btn-danger" %>
+    <% end %>
+  </div>
+</div>
+
+
+

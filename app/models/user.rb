@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :photos, dependent: :destroy
   has_many :diaries, dependent: :destroy
   has_many :lottelies, dependent: :destroy
+  has_many :expenses, dependent: :destroy
   
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true

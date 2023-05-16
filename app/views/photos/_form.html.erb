@@ -37,8 +37,9 @@
         <%= f.hidden_field :longitude, id: :photo_longitude %>
     </div></br>
 
+    <%= icon 'fas', 'map-marker-alt' %>マップ上をタップするとピンが立ちます。
     <div id="map"></div>
-    <p>人型アイコンをマップ上にドラッグするとパークにいるような目線になるため、ピンを立てる時の参考にしてください。</p></br>
+    <%= icon 'fas', 'fa-male' %>人型アイコンをマップ上にドラッグするとパークにいるような目線になるため、ピンを立てる時の参考にしてください。
 
     <div class="actions">
         <%= f.submit '投稿', class: 'btn btn-info rounded-pill px-3' %>

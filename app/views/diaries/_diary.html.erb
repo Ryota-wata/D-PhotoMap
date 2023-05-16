@@ -9,7 +9,7 @@
       <div class="px-3 pt-3 pb-2 d-flex justify-content-between">
         <div class="btn-group">
           <% diary.tags.each do |tag| %>
-            <%= link_to tag.name, tag_diaries_path(tag_id: tag.id), class: "badge rounded-pill bg-info text-decoration-none text-white" %>
+            <%= link_to tag.name, tag_diaries_path(tag_id: tag.id), class: "badge text-bg-warning rounded-pill" %>
           <% end %>
         </div>
       </div>

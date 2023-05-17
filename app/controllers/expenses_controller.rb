@@ -1,8 +1,8 @@
 class ExpensesController < ApplicationController
-  before_action :set_expense, only: [:edit, :update, :destroy]
+  before_action :set_expense, only: [:edit, :update, :destroy, :show]
 
   def index
-    @expenses = Expense.all.order(created_at: :desc)
+    @expenses = current_user.expenses.order(created_at: :desc)
   end
 
   def new
@@ -21,7 +21,6 @@ class ExpensesController < ApplicationController
   end
 
   def show
-    @expense = Expense.find(params[:id])
     @expense_items = @expense.expense_items
   end
 

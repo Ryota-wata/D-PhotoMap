@@ -28,7 +28,7 @@
                 <tr>
                   <td><%= expense.name %></td>
                   <td><%= number_with_delimiter(expense.price) %>円</td>
-                  <td><%= expense.quantity %>個</td>
+                  <td><%= expense.quantity %></td>
                   <td><%= number_with_delimiter(expense.subtotal) %>円</td>
                 </tr>
                 <% total += expense.subtotal %>
@@ -44,6 +44,7 @@
             <% end %> 
           </tbody>
         </table>
+        <%= link_to "一覧に戻る", expenses_path, class: 'btn btn-outline-secondary d-inline-flex align-items-center' %>
       </div>
     </div>
   </div>

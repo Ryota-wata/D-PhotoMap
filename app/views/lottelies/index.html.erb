@@ -13,7 +13,7 @@
                 <%= link_to '投稿', new_lottely_path, class: 'btn btn-info rounded-pill px-3 btn-sm' %>
             </div>
         </div>
-    </section>
+    </section></br>
     <% 
        user_lottelies = current_user.lottelies
        election = user_lottelies.where(result: "当選").count

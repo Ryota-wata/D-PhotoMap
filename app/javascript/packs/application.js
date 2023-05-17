@@ -23,5 +23,6 @@ require('jquery')
 require('@nathanvda/cocoon')
 
 import "photo"
+import "expense"
 
 

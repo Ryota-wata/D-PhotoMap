@@ -13,7 +13,7 @@
         <h1 class="card-title pricing-card-title">
           <li class="list-inline-item">
             <%= icon 'fas', 'yen-sign' %>
-            <%= expense.total %>円
+            <%= number_with_delimiter(expense.total) %>円
           </li>
           <small class="text-body-secondary">/ 日</small>
         </h1>

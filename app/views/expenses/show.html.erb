@@ -3,24 +3,48 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <h1 class="m-5 text-center"><%= t'.title' %></h1>
-      <%= form_with model: @expense, url: '/expenses', method: :post, local: true do |f| %>
-        <div class="form-group row">
-          <%= f.label :day, class: 'col-sm-2 col-form-label' %>
-          <div class="input-group">
-            <%= f.date_field :day, class: 'form-control', value: @expense.day %>
-          </div>
-            
-          <%= f.label :total, class: 'col-sm-2 col-form-label' %>
-          <div class="input-group">
-            <%= f.text_field :total, placeholder: '総支出', class: 'form-control', value: @expense.total %>
-            <span class="input-group-text">円</span>
-          </div>
-        </div></br></br>
+      <table class="table table-hover">
+        <tr>
+          <th><%= Expense.human_attribute_name(:day) %></th>
+          <td><%= @expense.day.strftime('%Y年%m月%d日') %></td>
+        </tr>
+      </table></br>
 
-        <%= f.fields_for :expense_items do |i| %>
-          <%= render 'expense_item_fields', f: i %>
-        <% end %></br>
-      <% end %>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="thead-default">
+              <tr>
+                  <th><%= ExpenseItem.human_attribute_name(:name) %></th>
+                  <th><%= ExpenseItem.human_attribute_name(:price) %></th>
+                  <th><%= ExpenseItem.human_attribute_name(:quantity) %></th>
+                  <th><%= ExpenseItem.human_attribute_name(:subtotal) %></th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+            <% total = 0 %>
+            <% if @expense_items.any? %>
+              <% @expense_items.each do |expense| %>
+                <tr>
+                  <td><%= expense.name %></td>
+                  <td><%= number_with_delimiter(expense.price) %>円</td>
+                  <td><%= expense.quantity %>個</td>
+                  <td><%= number_with_delimiter(expense.subtotal) %>円</td>
+                </tr>
+                <% total += expense.subtotal %>
+              <% end %>
+              <tr>
+                <th colspan="3">出費総額</th>
+                <td><%= number_with_delimiter(total) %>円</td>
+              </tr>
+            <% else %>
+              <tr>
+                <td colspan="4">購入商品がありません。</td>
+              </tr>
+            <% end %> 
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

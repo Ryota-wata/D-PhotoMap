@@ -16,17 +16,19 @@
             </div>
           </div></br></br>
 
-          <h2 class="title">費目フォーム</h2>
+          <h2 class="title">費目フォーム</h2></br>
           <%= f.fields_for :expense_items do |i| %>
             <%= render 'expense_item_fields', f: i %>
-          <% end %></br>
+          <% end %>
 
-          <div id="detail-association-insertion-point"></div></br></br>
+          <!-- ここから追加 -->
+          <div id="detail-association-insertion-point"></div>
 
+          <!-- フィールド追加ボタン -->
           <%= link_to_add_association '追加', f, :expense_items, class: 'btn btn-warning',
           data: {
           association_insertion_node: '#detail-association-insertion-point',
-          association_insertion_method: 'after' }%>　費目フォームが追加されます。</br></br>
+          association_insertion_method: 'before' }%>　費目フォームが追加されます。</br></br>
 
           <div class="actions">
             <%= f.submit '登録', class: 'btn btn-info rounded-pill px-3' %>

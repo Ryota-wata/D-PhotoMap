@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <h1><%= t('.title') %></h1></br>
+      <h1 class="fw-light title text-center"><%= t('.title') %></h1></br>
       <%= form_with model: @user, url: password_reset_path(@token), local: true do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
 

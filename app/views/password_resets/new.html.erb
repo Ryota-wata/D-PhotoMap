@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <h1><%= t('.title') %></h1>
+      <h1 class="fw-light title text-center"><%= t('.title') %></h1></br>
       <%= form_with url: password_resets_path, method: :post, local: true do |f| %>
         <div class="form-group">
           <%= f.label :email, t(User.human_attribute_name(:email)) %><br />

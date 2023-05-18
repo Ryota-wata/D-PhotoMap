@@ -2,32 +2,26 @@
     <div class="col-md-5 p-lg-5 mx-auto my-5">
       <h1 class="display-4 fw-normal title">D PhotoMap</h1>
       <p class="lead fw-normal">パークで撮った写真を</br>マップにピン留め</br>しよう！</p>
-      <%= link_to 'ログイン', login_path, class:"btn btn-primary btnx-pink" %>
-      <%= link_to 'サインアップ', new_user_path, class:"btn btn-success" %>
+      <%= link_to 'ログイン', login_path, class:"btn btn-primary", style: "background-color: rgb(242, 63, 143);border-color: rgb(242, 63, 143);" %>
+      <%= link_to 'サインアップ', new_user_path, class:"btn btn-success", style: "background-color: rgb(12, 171, 118); border-color: rgb(12, 171, 118);" %>
     </div>
     <div class="product-device shadow-sm d-none d-md-block"></div>
     <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
   </div>
-
-
-<div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <%= image_tag 'key.jpg', :size => '700*500', class: 'd-block mx-lg-auto img-fluid', loading:'lazy' %>
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title">D PhotoMapとは</h1>
-        <p class="lead">ディズニーに行くとたくさん写真を撮りたくなりますよね🎵</br>
-        撮影した写真を帰ってから見返していて、こんな経験はありませんか？</br>「この写真撮った場所どこだっけ？」</br>そんなお困りごとをこのアプリが解決します！</p>
-      </div>
+  <div class="d-md-flex w-100 my-md-3 ps-md-3">
+  <div class=" flex-md-fill text-bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-3 py-3">
+      <h2 class="display-5">D PhotoMapとは</h2>
+      <p class="lead">開発に至った経緯</p>
     </div>
+    <div class="bg-body-tertiary shadow-sm mx-auto" border-radius: 21px 21px 0 0;">初めまして！D PhotoMap 開発者です！</br>私は通勤時間を１時間半にしてでも浦安に引っ越すほどのディズニー好きです（笑）</br>特に日本のディズニーは接客やサービスの品質が素晴らしいですよね🎵</br>そんな素晴らしいディズニーでも、ゲストの皆様は下記のような課題を抱えているのではないでしょうか？</br></br>⭐️写真を撮った場所が思い出せない（主に隠れミッキーとかかなと）</br>⭐️抽選が当たらない（一度も見れずに終了したショーもあります涙）</br>⭐️出費がかさむ（ディズニーにお金を落とすのは良いことですが笑）</br></br>そんなゲストの抱える課題解決に少しでも力になれればと思い、このアプリを開発しました！</br>下記に本アプリの機能の紹介をしておりますので、最後まで読んで頂けると幸いです。</div>
   </div>
 </div>
 
 <div class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row align-items-center g-5 py-5">
       <div class="col-10 col-sm-8 col-lg-6">
-      <%= image_tag 'catsle.jpg', :size => '700*500', class: 'd-block mx-lg-auto img-fluid', loading:'lazy' %>
+      <%= image_tag 'pin2.jpg', :size => '700*500', class: 'd-block mx-lg-auto img-fluid', loading:'lazy' %>
       </div>
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title">マップに写真をピン留めしよう</h1>
@@ -52,11 +46,11 @@
 <div class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row align-items-center g-5 py-5">
       <div class="col-10 col-sm-8 col-lg-6">
-      <%= image_tag 'diary.jpg', :size => '700*500', class: 'd-block mx-lg-auto img-fluid', loading:'lazy' %>
+      <%= image_tag 'lottely.jpg', :size => '700*500', class: 'd-block mx-lg-auto img-fluid', loading:'lazy' %>
       </div>
       <div class="col-lg-6">
-        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title">日記機能</h1>
-        <p class="lead">その日パークで体験したことを日記に綴ることができます！</br>投稿した日記は、タグを設定することで絞り込みができます！</p>
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title">抽選結果記録機能</h1>
+        <p class="lead">ディズニーといえば抽選が付きものです！</br>抽選結果を記録し、一覧で見返すことができます！</br>抽選結果からあなたの当選確率を表示します🎵</br>検索機能を活用し、当選しやすい曜日や時間帯を分析してみよう！</p>
       </div>
     </div>
 </div>
@@ -64,16 +58,16 @@
 <div class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
       <div class="col-10 col-sm-8 col-lg-6">
-        <%= image_tag 'lottely.jpg', :size => '700*500', class: 'd-block mx-lg-auto img-fluid', loading:'lazy' %>
+        <%= image_tag 'pay.jpg', :size => '700*500', class: 'd-block mx-lg-auto img-fluid', loading:'lazy' %>
       </div>
       <div class="col-lg-6">
-        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title">抽選結果機能</h1>
-        <p class="lead">ディズニーといえば抽選が付きものです！</br>抽選結果を記録し、一覧で見返すことができます！</br>抽選結果からあなたの当選確率を表示します🎵</br>当選しやすい曜日や時間帯を分析してみよう！</p>
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 title">出費管理機能</h1>
+        <p class="lead">ディズニーに行くとたくさん買い物しますよね🎵</br>パーク内でグッズや食事などに使ったお金を記録し、ディズニー専用家計簿を作成できます！</br>パーク内でどのくらいお金を使っているかが一目瞭然になります（笑）</p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container col-xxl-8 px-4 py-5">
+<div class="container col-xxl-8 px-4 py-4">
   <h6 class="m-5 text-center text-body-emphasis lh-1">※本アプリ内で使用している写真は</br>開発者が撮影したものです。</h6>
 </div>

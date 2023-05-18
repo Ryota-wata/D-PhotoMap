@@ -3,8 +3,8 @@
     <%= f.label :name %>
     <%= f.text_field :name, placeholder: '費目', class: 'form-control' %>
   </div>
-  <div class="col-md-2 field">
-    <%= f.label :price %>　※カンマは不要です。
+  <div class="col-md-3 field">
+    <%= f.label :price %>
     <div class="input-group">
       <%= f.text_field :price, placeholder: '価格', class: 'form-control price' %>
       <span class="input-group-text">円</span>
@@ -17,7 +17,7 @@
       <span class="input-group-text">個</span>
     </div>
   </div>
-  <div class="col-md-2 field">
+  <div class="col-md-3 field">
     <%= f.label :subtotal %>
     <div class="input-group">
       <%= f.text_field :subtotal, placeholder: '自動計算されます。', class: 'form-control subtotal' %>

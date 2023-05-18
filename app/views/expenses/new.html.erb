@@ -5,7 +5,6 @@
       <h1 class="m-5 text-center"><%= t'.title' %></h1>
         <h2>総額</h2>
         <%= form_with model: @expense, url: '/expenses', method: :post, local: true do |f| %>
-          <%= render 'shared/error_messages', object: f.object %>
           <div class="form-group row">
             <%= f.label :day, class: 'col-sm-2 col-form-label' %>
             <div class="input-group">

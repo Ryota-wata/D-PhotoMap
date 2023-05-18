@@ -19,4 +19,40 @@
   padding-bottom: 62.5%; /* ビューポートの幅がどのくらいでも、高さは幅の 62.5% */
 }
 
+.album {
+  background-color: orange;
+  padding-top: 3rem;
+}
 
+.diary {
+  position: relative;
+  padding-top: 3rem;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('st.jpg');
+  background-size: cover;
+  z-index: -1;
+}
+
+.diary-content {
+  position: relative;
+  z-index: 1; /* .content要素を手前に配置 */;
+}
+
+.border {
+  background-color: rgb(215, 249, 215);
+}
+
+.diary-title {
+  color: aliceblue;
+}
+
+.diary-text {
+  color: aliceblue;
+}

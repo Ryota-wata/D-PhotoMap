@@ -9,11 +9,6 @@
   z-index: 1;
 }
 
-.btnx-pink{
-  background-color: pink;
-  border: 2px solid rgb(12, 171, 118);
-}
-
 #map {
   width: 100%;
   height: 100%;

@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <h1 class="m-5 text-center title"><%= t'.title' %></h1>
+      <h1 class="m-5 text-center title fw-light"><%= t'.title' %></h1>
         <h2 class="title">総額</h2>
         <%= form_with model: @expense, url: expense_path(@expense), method: :patch, local: true do |f| %>
           <div class="form-group row">

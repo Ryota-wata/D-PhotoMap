@@ -33,15 +33,15 @@ ja:
     index:
       title: 'アルバム'
     new:
-      title: '写真投稿'
+      title: '写真保存'
     edit:
       title: '写真編集'
     show:
       title: '写真詳細'
       confirm: '削除します。よろしいですか？'
     create:
-      success: '投稿しました'
-      fail: '投稿できませんでした'
+      success: '保存しました'
+      fail: '保存できませんでした'
     update:
       success: '更新しました'
       fail: '更新できませんでした'
@@ -51,7 +51,7 @@ ja:
       confirm: '削除します。よろしいですか？'
   diaries:
     new:
-      title: '日記投稿'
+      title: '日記作成'
     edit:
       title: '日記編集'
     index:
@@ -61,8 +61,8 @@ ja:
       title: '日記詳細'
       confirm: '削除します。よろしいですか？'
     create:
-      success: '投稿しました'
-      fail: '投稿できませんでした'
+      success: '保存しました'
+      fail: '保存できませんでした'
     update:
       success: '更新しました'
       fail: '更新できませんでした'
@@ -82,8 +82,8 @@ ja:
       title: '抽選結果'
       confirm: '削除します。よろしいですか？'
     create:
-      success: '投稿しました'
-      fail: '投稿できませんでした'
+      success: '登録しました'
+      fail: '登録できませんでした'
     update:
       success: '更新しました'
       fail: '更新できませんでした'

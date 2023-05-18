@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <h1 class="m-5 text-center title"><%= t'.title' %></h1>
+      <h1 class="m-5 text-center title fw-light"><%= t'.title' %></h1>
         <h2 class="title">総額</h2>
         <%= form_with model: @expense, url: '/expenses', method: :post, local: true do |f| %>
           <div class="form-group row">
@@ -29,7 +29,7 @@
           association_insertion_method: 'after' }%>　費目フォームが追加されます。</br></br>
 
           <div class="actions">
-            <%= f.submit '保存', class: 'btn btn-info rounded-pill px-3' %>
+            <%= f.submit '登録', class: 'btn btn-info rounded-pill px-3' %>
             <%= link_to "一覧に戻る", expenses_path, class: 'btn btn-outline-secondary d-inline-flex align-items-center' %>
           </div>
         <% end %>

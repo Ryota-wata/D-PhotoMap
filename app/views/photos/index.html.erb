@@ -1,11 +1,10 @@
 <% content_for(:title, t('.title')) %>
-<div class="album">
   <section class="py-5 text-center container">
     <div class="serch-photo">
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light"><%= t'.title' %></h1></br>
-          <p class="lead text-body-secondary">日にち、パーク、エリア、メモを部分一致で検索します</p>
+          <h1 class="fw-light title"><%= t'.title' %></h1></br>
+          <p class="lead text-body-secondary">日にち・パーク・エリア・メモを</br>部分一致で検索します</p>
         </div>
         <div>
           <%= render 'search', url: photos_path %>
@@ -30,4 +29,4 @@
       </div>
     </div>
   </div>
-</div>
+

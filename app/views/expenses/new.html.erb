@@ -2,8 +2,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <h1 class="m-5 text-center"><%= t'.title' %></h1>
-        <h2>総額</h2>
+      <h1 class="m-5 text-center title"><%= t'.title' %></h1>
+        <h2 class="title">総額</h2>
         <%= form_with model: @expense, url: '/expenses', method: :post, local: true do |f| %>
           <div class="form-group row">
             <%= f.label :day, class: 'col-sm-2 col-form-label' %>
@@ -16,7 +16,7 @@
             </div>
           </div></br></br>
 
-          <h2>費目フォーム</h2>
+          <h2 class="title">費目フォーム</h2>
           <%= f.fields_for :expense_items do |i| %>
             <%= render 'expense_item_fields', f: i %>
           <% end %></br>

@@ -1,12 +1,9 @@
 <% content_for(:title, t('.title')) %>
-<div class="diary">
-  <div class="bg-image"></div>
-  <div class="diary-content">
-  <section class="text-center container">
+  <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light diary-title"><%= t'.title' %></h1></br>
-        <p class="lead text-body-secondary diary-text">パークで体験した思い出を日記に綴ろう！</br>タグを設定すると、タグをクリックすることで絞り込み検索ができます。</p>
+        <h1 class="fw-light title"><%= t'.title' %></h1></br>
+        <p class="lead text-body-secondary">パークでの思い出を日記に綴ろう</br>タグを設定すると、タグをクリックすることで絞り込み検索ができます。</p>
       </div>
       <div>
         <%= link_to '作成', new_diary_path, class: 'btn btn-info rounded-pill px-3' %>
@@ -27,8 +24,8 @@
       </div>
     </div>
   </div>
-  </div>
-</div>
+
+
 
           
 

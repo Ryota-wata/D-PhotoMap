@@ -3,7 +3,7 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light"><%= t'.title' %></h1></br>
+                <h1 class="fw-light title"><%= t'.title' %></h1></br>
                 <p class="lead text-body-secondary">当選しやすい曜日や時間帯を分析しよう！</p>
             </div>
             <div>
@@ -20,7 +20,7 @@
        all_lottelies = user_lottelies.where.not(result: nil).count
        winning_rate = all_lottelies > 0 ? election.to_f / all_lottelies * 100 : 0
     %>
-    <h3 class="fw-bold mb-0 fs-4">あなたの当選確率：<%= '%.2f' % winning_rate %>%</h3></br>
+    <h3 class="fw-bold mb-0 fs-4 title">あなたの当選確率：<%= '%.2f' % winning_rate %>%</h3></br>
 
     <div class="table-responsive">
         <table class="table table-hover">

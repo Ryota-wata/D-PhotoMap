@@ -1,31 +1,34 @@
 <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-    <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-      <span class="fs-4">D PhotoMap</span>
+    <a class="d-flex align-items-center mb-3 mb-md-0 text-decoration-none">
+      <span class="fs-4 title">D PhotoMap</span>
     </a>
     <ul class="nav nav-pills">
       <div>
-        <li class="nav-item"><i class="fas fa-images"></i></li>
-        <li><%= link_to 'アルバム', photos_path, class:"nav-link" %></li>
+        <li>　　</li>
       </div>
       <div>
-        <li class="nav-item"><i class="far fa-file-alt"></i></li>
-        <li><%= link_to '日記', diaries_path, class:"nav-link" %></li>
+        <li class="nav-item"><i class="fas fa-images" style="color: orange;"></i></li>
+        <li><%= link_to 'アルバム', photos_path, class:"nav-link", style: "color: orange;" %></li>
       </div>
       <div>
-        <li class="nav-item"><i class="fas fa-dice"></i></li>
-        <li><%= link_to '抽選結果', lottelies_path, class:"nav-link" %></li>
+        <li class="nav-item"><i class="far fa-file-alt" style="color: blueviolet;"></i></li>
+        <li><%= link_to '日記', diaries_path, class:"nav-link", style: "color: blueviolet;" %></li>
       </div>
       <div>
-        <li class="nav-item"><i class="fas fa-yen-sign"></i></li>
-        <li><%= link_to '出費管理', expenses_path, class:"nav-link" %></li>
+        <li class="nav-item"><i class="fas fa-dice" style="color: yellowgreen;"></i></li>
+        <li><%= link_to '抽選結果', lottelies_path, class:"nav-link", style: "color: yellowgreen;" %></li>
       </div>
       <div>
-        <li class="nav-item"><i class="fas fa-user-circle"></i></li>
+        <li class="nav-item"><i class="fas fa-yen-sign" style="color: rgb(228, 46, 158);"></i></li>
+        <li><%= link_to '出費管理', expenses_path, class:"nav-link", style: "color: rgb(228, 46, 158);" %></li>
+      </div>
+      <div>
+        <li class="nav-item"><i class="fas fa-user-circle" style="color: blue;"></i></li>
         <li><%= link_to 'プロフィール', profile_path, class:"nav-link" %></li>
       </div>
       <div>
-        <li class="nav-item"><i class="fas fa-sign-out-alt"></i></li>
-        <li><%= link_to 'ログアウト', logout_path, class:"nav-link", method: :delete, data: { confirm: 'ログアウトしますか？' } %></li>
+        <li class="nav-item"><i class="fas fa-sign-out-alt" style="color: green;"></i></li>
+        <li><%= link_to 'ログアウト', logout_path, class:"nav-link", style: "color: green;", method: :delete, data: { confirm: 'ログアウトしますか？' } %></li>
       </div>
     </ul>
 </header>

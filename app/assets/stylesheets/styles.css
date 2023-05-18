@@ -9,8 +9,8 @@
   z-index: 1;
 }
 
-.inline {
-  display: inline;
+.btnx-pink{
+  background: var(--bs-pink); border: 2px solid var(--bs-pink);         
 }
 
 #map {
@@ -26,5 +26,9 @@
 }
 
 .border {
-  background-color: rgb(215, 249, 215);
+  background-color: rgb(194, 223, 245)
+}
+
+header {
+  background-color: rgb(205, 240, 242)
 }

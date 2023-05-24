@@ -9,7 +9,7 @@ class PhotosController < ApplicationController
 
   def index
     @q = current_user.photos.ransack(params[:q])
-    @photos = @q.result(distinct: true).includes(:user).order(created_at: :desc)
+    @photos = @q.result(distinct: true).includes(:user).order(day: :desc)
   end
 
   def show ;end

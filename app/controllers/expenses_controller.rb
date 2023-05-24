@@ -2,7 +2,7 @@ class ExpensesController < ApplicationController
   before_action :set_expense, only: [:edit, :update, :destroy, :show]
 
   def index
-    @expenses = current_user.expenses.order(created_at: :desc)
+    @expenses = current_user.expenses.order(day: :desc)
   end
 
   def new

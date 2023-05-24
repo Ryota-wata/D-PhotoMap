@@ -7,7 +7,7 @@ class LotteliesController < ApplicationController
       day_wday = params[:q][:day_wday].to_i
       @q = @q.where("strftime('%w', day) = ?", day_wday)
     end
-    @lottelies = @q.result(distinct: true).includes(:user).order(created_at: :desc)
+    @lottelies = @q.result(distinct: true).includes(:user).order(day: :desc)
   end
 
   def new

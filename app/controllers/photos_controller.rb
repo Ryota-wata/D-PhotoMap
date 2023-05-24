@@ -38,6 +38,10 @@ class PhotosController < ApplicationController
     redirect_to photos_path, success: t('.success')
   end
 
+  def map
+    @photos = current_user.photos
+  end
+
   private
 
   def photo_params

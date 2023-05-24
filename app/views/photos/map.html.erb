@@ -1,0 +1,69 @@
+<div class="container">
+  <select id="park-select">
+    <option value="ディズニーランド">ディズニーランド</option>
+    <option value="ディズニーシー">ディズニーシー</option>
+  </select>
+</div></br>
+
+<div class="container">
+  ピンをクリックすると写真の詳細ページに遷移します。
+</div></br>
+
+<div class="container">
+  <div id="map"></div>
+</div>
+
+<script>
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 18,
+      center: { lat: 35.6329, lng: 139.8804 },
+      mapTypeId: 'satellite',
+      heading: 180,
+      restriction: {
+        latLngBounds: {
+          north: 35.63666632775198,
+          south: 35.62193630211798,
+          west: 139.8745356094571,
+          east: 139.89240645368025
+        },
+      strictBounds: true
+      }
+    });
+
+    // select要素を取得
+    const parkSelect = document.getElementById('park-select');
+  
+    // セレクトボックスが変更された時に呼ばれる関数
+    function changeMap() {
+      // 選択したテーマパークによって中心点と地図の種類を変更
+      if (parkSelect.value === 'ディズニーランド') {
+        map.setCenter({lat: 35.632896, lng: 139.880394});
+        map.setMapTypeId('satellite');
+      } else if (parkSelect.value === 'ディズニーシー') {
+        map.setCenter({lat: 35.62576389318218, lng: 139.88454133123065});
+        map.setMapTypeId('satellite');
+      }
+    }
+  
+    // 選択したパークによって地図を変更
+    parkSelect.addEventListener('change', changeMap);
+
+    <% @photos.each do |photo| %>
+      var marker = new google.maps.Marker({
+        position: { lat: <%= photo.latitude %>, lng: <%= photo.longitude %> },
+        map: map,
+      });
+
+      // ピンをクリックしたときに写真の詳細ページにリダイレクトする処理
+      google.maps.event.addListener(marker, 'click', function() {
+        window.location.href = '<%= photo_path(photo) %>';
+      });
+    <% end %>
+  }
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap"></script>
+
+
+

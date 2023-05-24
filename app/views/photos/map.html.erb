@@ -9,8 +9,7 @@
   ピンをクリックすると写真の詳細ページに遷移します。
 </div></br>
 
-
-  <div id="map"></div>
+<div id="map"></div>
 
 
 <script>
@@ -30,6 +29,24 @@
       strictBounds: true
       }
     });
+
+    // select要素を取得
+    const parkSelect = document.getElementById('park-select');
+  
+    // セレクトボックスが変更された時に呼ばれる関数
+    function changeMap() {
+      // 選択したテーマパークによって中心点と地図の種類を変更
+      if (parkSelect.value === 'ディズニーランド') {
+        map.setCenter({lat: 35.632896, lng: 139.880394});
+        map.setMapTypeId('satellite');
+      } else if (parkSelect.value === 'ディズニーシー') {
+        map.setCenter({lat: 35.62576389318218, lng: 139.88454133123065});
+        map.setMapTypeId('satellite');
+      }
+    }
+  
+    // 選択したパークによって地図を変更
+    parkSelect.addEventListener('change', changeMap);
 
     <% @photos.each do |photo| %>
       var marker = new google.maps.Marker({

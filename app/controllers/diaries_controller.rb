@@ -50,7 +50,7 @@ class DiariesController < ApplicationController
     # タグ検索
     def search
         @tag = Tag.find(params[:tag_id])
-        @diaries = @tag.diaries.all
+        @diaries = @tag.diaries.where(user_id: current_user.id)
     end
     
     private

@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :diaries, dependent: :destroy
   has_many :lottelies, dependent: :destroy
   has_many :expenses, dependent: :destroy
+  has_many :authentications, dependent: :destroy
+  accepts_nested_attributes_for :authentications
   
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true

@@ -17,6 +17,11 @@
                 </div></br>
                 <div class="actions">
                     <%= f.submit 'インパ', class: 'btn btn-primary', style: "background-color: rgb(242, 63, 143);border-color: rgb(242, 63, 143);" %>
+                </div><br />
+                <div class="action">
+                    <%= link_to auth_at_provider_path(provider: :twitter), class: 'btn btn-info twitter' do %>
+                        <i class="fab fa-twitter"></i> Twitterでログイン
+                    <% end %>
                 </div>
             <% end %><br />
             <%= link_to 'パスワードを忘れた方はこちら', new_password_reset_path %>

@@ -2,4 +2,4 @@ default_url_options:
   host: 'https://dphotomap.herokuapp.com'
 
 sorcery:
-  callback_url: "https://dphotomap.herokuapp.com/oauth/callback?"
+  callback_url: 'https://dphotomap.herokuapp.com/oauth/callback?'

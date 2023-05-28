@@ -114,10 +114,8 @@ Rails.application.config.sorcery.configure do |config|
   config.twitter.user_info_path = "/1.1/account/verify_credentials.json?include_email=true"
   config.twitter.user_info_mapping = {
   email: 'email',
-  name: 'name',
-  introduction: 'description',
+  username: 'name'
   }
-
   #
   # config.facebook.key = ""
   # config.facebook.secret = ""
@@ -514,7 +512,7 @@ Rails.application.config.sorcery.configure do |config|
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-    # user.authentications_class =
+    user.authentications_class = Authentication
 
     # User's identifier in the `authentications` class.
     # Default: `:user_id`

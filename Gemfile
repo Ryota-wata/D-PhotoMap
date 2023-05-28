@@ -67,3 +67,4 @@ gem 'cocoon'
 gem 'fog-aws'
 gem 'aws-sdk-s3', require: false
 gem 'turbo-rails'
+gem 'pry-byebug' 

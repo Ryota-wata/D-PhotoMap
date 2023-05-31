@@ -2,7 +2,7 @@ class QuizzesController < ApplicationController
   before_action :set_quiz, only: [:edit, :update, :destroy]
 
   def index
-    @quizzes = Quiz.all
+    @quizzes = Quiz.all.includes(:user).order(created_at: :desc)
   end
 
   def new

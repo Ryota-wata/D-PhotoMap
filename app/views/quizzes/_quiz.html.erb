@@ -4,6 +4,8 @@
       <div class="p-3">
         <h3 class="mb-0"><%= link_to quiz.name, quiz_path(quiz) %></h3></br>
         <p class="card-text mb-auto">作成者：<%= quiz.user.username %></p>
+        <p class="card-text mb-auto">作成日：<%= quiz.created_at.strftime("%Y年%m月%d日") %></p>
+        <p class="card-text mb-auto">コメント数：<%= quiz.comments.count %>件</p>
       </div>
       <div class="px-3 pb-3 d-flex justify-content-end">
         <% if current_user == quiz.user %>

@@ -43,6 +43,8 @@ ja:
         question: '問題'
         answer: '答え'
         description: '解説'
+        question_image: '問題用画像'
+        answer_image: '答え画像'
       comment:
         comment_content: 'コメント'
   errors:

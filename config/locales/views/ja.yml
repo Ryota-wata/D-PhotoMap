@@ -130,8 +130,8 @@ ja:
     index:
       title: 'クイズ一覧'
     create:
-      success: '登録しました'
-      fail: '登録できませんでした'
+      success: '投稿しました'
+      fail: '投稿できませんでした'
     update:
       success: '更新しました'
       fail: '更新できませんでした'

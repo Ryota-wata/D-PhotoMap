@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post "oauth/callback", to: "oauths#callback"
   get "oauth/callback", to: "oauths#callback"
   get "oauth/:provider", to: "oauths#oauth", as: :auth_at_provider
+  get '/answer/:id', to: 'quizzes#answer', as: :answer
   resources :users, only: [:new, :create]
   resource :profile, only: [:show, :edit, :update, :destroy]
   resources :photos, only: [:new, :index, :create, :edit, :update, :destroy, :show]
@@ -20,5 +21,8 @@ Rails.application.routes.draw do
   end
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :expenses, only: [:new, :index, :create, :edit, :update, :destroy, :show]
+  resources :quizzes, only: [:new, :index, :create, :edit, :update, :destroy, :show] do
+    resources :comments, only: [:create, :destroy, :update], shallow: true
+  end
 
 end

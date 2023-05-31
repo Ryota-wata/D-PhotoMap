@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :expenses, dependent: :destroy
   has_many :authentications, dependent: :destroy
   accepts_nested_attributes_for :authentications
+  has_many :quizzes, dependent: :destroy
+  has_many :comments, dependent: :destroy
   
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true

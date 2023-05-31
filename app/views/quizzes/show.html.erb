@@ -1,0 +1,57 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <h1 class="m-5 text-center title fw-light"><%= t'.title' %></h1>
+    <table class="table table-hover">
+        <tr>
+          <th><%= Quiz.human_attribute_name(:name) %></th>
+          <td><%= @quiz.name %></td>
+        </tr>
+        <tr>
+          <th><%= Quiz.human_attribute_name(:question) %></th>
+          <td><%= @quiz.question %></td>
+        </tr>
+    </table></br>
+    <div class="photo-wrapper"> 
+        <% if @quiz.question_image.present? %>
+          <td><%= image_tag @quiz.question_image.url, class: "photo", style: "max-width: 100%; height: auto;" %></td>
+        <% else %>
+          <td><%= '画像はありません' %></td>
+        <% end %>
+        </tr>
+    </table></br>
+  </div></br>
+  <div>
+    <%= link_to '回答を見る', answer_path(@quiz), class: 'btn btn-outline-primary' %></br></br>
+    <%= link_to '一覧に戻る', quizzes_path, class: 'btn btn-outline-secondary' %>
+  </div></br></br>
+
+  <%= form_with model: [@quiz, @comment], local: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.label :comment_content %>
+      <%= f.text_area :comment_content, class: 'form-control' %></br>
+    </div>
+    <div class="actions">
+      <%= f.submit 'コメントを投稿', class: 'btn btn-outline-primary' %>
+    </div>
+  <% end %>
+  <div class="col-md-6 col-md-offset-3">
+    <h2 class="m-5 text-center title fw-light">コメント一覧</h2>
+    <% if @comments.present? %>
+    <% @comments.each do |comment| %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <p class="card-text"><%= comment.comment_content %></p>
+          <p class="card-text"><small class="text-muted">作成者：<%= comment.user.username %></small></p>
+          <% if comment.user == current_user %>
+            <%= link_to '削除', comment_path(comment), method: :delete, data: { confirm: '削除しますか？' }, class: 'btn btn-outline-danger' %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <% else %>
+      <p>コメントはありません</p>
+    <% end %>
+  </div>
+</div>

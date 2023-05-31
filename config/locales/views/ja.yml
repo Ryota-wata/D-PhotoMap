@@ -120,3 +120,30 @@ ja:
       success: '削除しました'
     expense:
       confirm: '削除します。よろしいですか？'
+  quizzes:
+    new:
+      title: 'クイズ作成'
+    edit:
+      title: 'クイズ編集'
+    show:
+      title: 'クイズ'
+    index:
+      title: 'クイズ一覧'
+    create:
+      success: '登録しました'
+      fail: '登録できませんでした'
+    update:
+      success: '更新しました'
+      fail: '更新できませんでした'
+    destroy:
+      success: '削除しました'
+    quiz:
+      confirm: '削除します。よろしいですか？'
+    answer:
+      title: '答え'
+  comments:
+    create:
+      success: 'コメントしました'
+      fail: 'コメントを入力してください'
+    destroy:
+      success: '削除しました'

@@ -38,6 +38,13 @@ ja:
         price: '価格'
         quantity: '数量'
         subtotal: '小計'
+      quiz:
+        name: 'タイトル'
+        question: '問題'
+        answer: '答え'
+        description: '解説'
+      comment:
+        comment_content: 'コメント'
   errors:
     messages:
       carrierwave_processing_error: 処理できませんでした

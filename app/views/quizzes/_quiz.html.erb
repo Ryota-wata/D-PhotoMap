@@ -1,0 +1,16 @@
+<div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+  <div id="quiz-id-<%= quiz.id %>">
+    <div class="border rounded overflow-hidden shadow-sm h-100">
+      <div class="p-3">
+        <h3 class="mb-0"><%= link_to quiz.name, quiz_path(quiz) %></h3></br>
+        <p class="card-text mb-auto">作成者：<%= quiz.user.username %></p>
+      </div>
+      <div class="px-3 pb-3 d-flex justify-content-end">
+        <% if current_user == quiz.user %>
+          <%= link_to '編集', edit_quiz_path(quiz), class: 'btn btn-success mr-3' %>
+          <%= link_to '削除', quiz_path(quiz), method: :delete, data: { confirm: t('.confirm') }, class: 'btn btn-danger' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

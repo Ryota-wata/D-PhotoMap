@@ -1,0 +1,26 @@
+<% content_for(:title, t('.title')) %>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light title"><%= t'.title' %></h1></br>
+        <p class="lead text-body-secondary">待ち時間も楽しめるようなクイズを投稿しよう</p></br>
+      </div>
+      <div>
+        <%= link_to '作成', new_quiz_path, class: 'btn btn-info rounded-pill px-3' %>
+      </div>
+    </div>
+  </section>
+
+  <div class="container pt-3">
+    <div class="row">
+      <div class="col-12">
+        <% if @quizzes.present? %>
+          <div class="row">
+            <%= render @quizzes %>
+          </div>
+        <% else %>
+          <p><%= 'ここに日記が掲載されます' %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>

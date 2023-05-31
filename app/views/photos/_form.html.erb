@@ -1,4 +1,5 @@
-<%= form_with model: @photo, local: true do |f| %>  
+<div class="container">
+  <%= form_with model: @photo, local: true do |f| %>  
     <%= render 'shared/error_messages', object: f.object %>
     <div class="form-group">
         <%= f.label :day %>
@@ -38,8 +39,10 @@
     </div></br>
 
     <th>撮影場所</th>
+</div>
 
-    <div id="map"></div></br>
+<div id="map"></div></br>
+  <div class="container"
     <h5><%= icon 'fas', 'map-marker-alt' %>マップ上をタップするとピンが立ちます。</h5>
     <p>・人型アイコンをマップ上にドラッグするとパークにいるような目線になるため、ピンを立てる時の参考にしてください。</p>
     <p>・スマートフォンの場合は、端末を横向きにすると操作しやすくなります。</p></br>
@@ -48,6 +51,7 @@
         <%= f.submit '保存', class: 'btn btn-info rounded-pill px-3' %>
         <%= link_to "一覧に戻る", photos_path, class: 'btn btn-outline-secondary d-inline-flex align-items-center' %>
     </div>
+  </div>
 <% end %>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap"></script>

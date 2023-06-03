@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-center">
+  <%= search_form_for @q, url: url do |f| %>
+    <div class="input-group mb-3">
+      <div class="form-group">
+        <%= f.label :title, "やること" %>
+        <%= f.search_field :title_cont, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :category, "カテゴリ" %>
+        <%= f.select :category_eq, [ [""],["グッズ"],["フード"],["ショー"],["その他"]],{}, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :content, "内容" %>
+        <%= f.search_field :content_cont, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :status, "ステータス" %>
+        <%= f.select :status_eq, [ [""],["未着手"],["着手中"],["完了"]],{},class: 'form-control' %>
+      </div>
+      <div class="input-group-append">
+        </br>
+        <%= f.submit class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+</div></br>

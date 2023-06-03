@@ -3,10 +3,6 @@ class LotteliesController < ApplicationController
 
   def index
     @q = current_user.lottelies.ransack(params[:q])
-    if params.dig(:q, :day_wday).present?
-      day_wday = params[:q][:day_wday].to_i
-      @q = @q.where("strftime('%w', day) = ?", day_wday)
-    end
     @lottelies = @q.result(distinct: true).includes(:user).order(day: :desc)
   end
 

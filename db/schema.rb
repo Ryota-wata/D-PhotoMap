@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_30_164604) do
+ActiveRecord::Schema.define(version: 2023_06_03_124131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,6 +116,19 @@ ActiveRecord::Schema.define(version: 2023_05_30_164604) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tasks", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "category"
+    t.text "content", null: false
+    t.jsonb "images"
+    t.string "status"
+    t.date "deadline"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_tasks_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
     t.string "email", null: false
@@ -137,4 +150,5 @@ ActiveRecord::Schema.define(version: 2023_05_30_164604) do
   add_foreign_key "diary_tags", "tags"
   add_foreign_key "expense_items", "expenses"
   add_foreign_key "quizzes", "users"
+  add_foreign_key "tasks", "users"
 end

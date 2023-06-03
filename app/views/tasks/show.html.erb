@@ -1,0 +1,49 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <h1 class="m-5 text-center title fw-light"><%= t'.title' %></h1>
+    <table class="table table-hover">
+        <tr>
+          <th>やること</th>
+          <td><%= @task.title %></td>
+        </tr>
+        <tr>
+          <th>カテゴリー</th>
+          <td><%= @task.category %></td>
+        </tr>
+        <tr>
+          <th>内容</th>
+          <td><%= @task.content %></td>
+        </tr>
+        <tr>
+          <th>ステータス</th>
+          <% if @task.status.present? %>
+            <td><%= @task.status %></td>
+          <% else %>
+            <td><%= '' %></td>
+          <% end %>
+        </tr>
+        <tr>
+          <th>期限</th>
+          <% if @task.deadline.present? %>
+            <td><%= @task.deadline.strftime('%Y年%m月%d日') %></td>
+          <% else %>
+            <td><%= '' %></td>
+          <% end %>
+        </tr>
+    </table></br>
+    <div class="photo-wrapper">
+        <% if @task.images.present? %>
+          <% @task.images.each do |task| %>
+            <td><%= image_tag(task.url, class: "photo", style: "max-width: 100%; height: auto;") %>ー
+          <% end %>
+        <% else %>
+          <td><%= '画像はありません' %></td>
+        <% end %>
+    </div></br>
+    <div>
+      <%= link_to '編集', edit_task_path(@task), class: 'btn btn-success mr-3' %>
+      <%= link_to '一覧に戻る', tasks_path, class: 'btn btn-outline-secondary' %>
+    </div>
+</div>
+

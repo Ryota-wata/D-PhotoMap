@@ -24,5 +24,6 @@ Rails.application.routes.draw do
   resources :quizzes, only: [:new, :index, :create, :edit, :update, :destroy, :show] do
     resources :comments, only: [:create, :destroy, :update], shallow: true
   end
+  resources :tasks, only: [:new, :index, :create, :edit, :update, :destroy, :show]
 
 end

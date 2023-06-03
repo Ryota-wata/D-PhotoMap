@@ -2,7 +2,6 @@ class DiariesController < ApplicationController
     before_action :set_diary, only: [:edit, :update, :destroy]
     
     def index
-        @tags = Tag.all
         @diaries = current_user.diaries.order(day: :desc)
     end
     

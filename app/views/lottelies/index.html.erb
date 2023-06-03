@@ -4,7 +4,7 @@
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light title"><%= t'.title' %></h1></br>
-                <p class="lead text-body-secondary">検索機能を上手く活用し、</br>当選しやすい曜日や時間帯を</br>分析しよう</p>
+                <p class="lead text-body-secondary">検索機能を上手く活用し、</br>当選しやすい曜日や時間帯を</br>分析しよう</p></br>
             </div>
             <div>
                 <%= render 'search', url: lottelies_path %>
@@ -38,7 +38,7 @@
             <tbody>
                 <% @lottelies.each do |lottely| %>
                     <tr>
-                        <td><%= lottely.day %></td>
+                        <td><%= lottely.day.strftime('%Y年%m月%d日') %></td>
                         <td><%= lottely.day_of_week %></td>
                         <td><%= lottely.facility %></td>
                         <td><%= lottely.time.strftime('%H:%M') %></td>

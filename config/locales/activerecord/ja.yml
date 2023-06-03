@@ -47,6 +47,13 @@ ja:
         answer_image: '答え画像'
       comment:
         comment_content: 'コメント'
+      task:
+        title: 'やること'
+        content: '内容'
+        images: '画像'
+        deadline: '期限'
+        status: 'ステータス'
+        category: 'カテゴリー'
   errors:
     messages:
       carrierwave_processing_error: 処理できませんでした

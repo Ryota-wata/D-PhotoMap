@@ -1,0 +1,54 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light title"><%= t'.title' %></h1></br>
+                <p class="lead text-body-secondary">パーク内でのやることリストを作成しよう</br>欲しいグッズや食べたいフードなどを写真付きで登録できます</p></br>
+            </div>
+            <div>
+                <%= render 'search', url: tasks_path %>
+            </div>
+            <div>
+                <%= link_to '作成', new_task_path, class: 'btn btn-info rounded-pill px-3' %>
+            </div>
+        </div>
+    </section></br>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead class="thead-default">
+                <tr>
+                    <th><%= Task.human_attribute_name(:title) %></th>
+                    <th><%= Task.human_attribute_name(:category) %></th>
+                    <th><%= Task.human_attribute_name(:status) %></th>
+                    <th><%= Task.human_attribute_name(:deadline) %></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @tasks.each do |task| %>
+                    <tr>
+                        <td><%= link_to task.title, task_path(task) %></td>
+                        <td><%= task.category %></td>
+                        <% if task.status.present? %>
+                            <td><%= task.status %></td>
+                        <% else %>
+                            <td><%= '' %></td>
+                        <% end %>
+                        <% if task.deadline.present? %>
+                            <td><%= task.deadline.strftime('%Y年%m月%d日') %></td> 
+                        <% else %>
+                            <td><%= '' %></td>
+                        <% end %>
+                        <td>
+                            <%= link_to '編集', edit_task_path(task), class: 'btn btn-success mr-3' %>
+                            <%= link_to '削除', task_path(task), method: :delete, data: { confirm: t('.confirm') }, class: 'btn btn-danger' %>
+                        </td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
+

@@ -1,0 +1,74 @@
+<%= form_with model: task, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div></br>
+
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.select :category, [["グッズ"],["フード"],["ショー"],["その他"]],{}, class: 'form-control' %>
+  </div></br>
+
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_area :content, class: 'form-control' %>
+  </div></br>
+
+  <div class="form-group">
+    <%= f.label :images %>
+    <%= f.file_field :images, onchange: 'previewImage()', multiple: true, class: 'form-control' %>
+    <%= f.hidden_field :image_cache %>
+  </div></br>
+
+  <div id="preview"></div></br>
+
+  <div class="form-group">
+    <%= f.label :status %>
+    <%= f.select :status, [[""],["未着手"],["着手中"],["完了"]],{}, class: 'form-control' %>
+  </div></br>
+
+  <div class="form-group">
+    <%= f.label :deadline %>
+    <%= f.date_field :deadline, class: 'form-control', type: 'date' %>
+  </div></br>
+
+  <div class="actions">
+    <%= f.submit '登録', class: 'btn btn-info rounded-pill px-3' %>
+    <%= link_to "一覧に戻る", tasks_path, class: 'btn btn-outline-secondary d-inline-flex align-items-center' %>
+  </div>
+
+<% end %>
+
+<script>
+function previewImage() {
+  var preview = document.querySelector('#preview');
+  var files   = document.querySelector('input[type=file]').files;
+
+  function readAndPreview(file) {
+
+    if ( /\.(jpe?g|png|gif)$/i.test(file.name) ) {
+      var reader = new FileReader();
+
+      reader.addEventListener("load", function () {
+        var image = new Image();
+        image.height = 100;
+        image.title = file.name;
+        image.src = this.result;
+        preview.appendChild( image );
+      });
+
+      reader.readAsDataURL(file);
+    }
+
+  }
+
+  if (files) {
+    [].forEach.call(files, readAndPreview);
+  }
+}
+
+function cancelImage() {
+  var fileInput = document.getElementById('image-upload-input');
+  fileInput.value = '';
+}
+</script>

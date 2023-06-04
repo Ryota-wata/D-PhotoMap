@@ -15,7 +15,7 @@
   </div></br>
 
   <div class="form-group">
-    <%= f.label :images %>
+    <%= f.label :images %>(複数枚登録可能)
     <%= f.file_field :images, onchange: 'previewImage()', multiple: true, class: 'form-control' %>
     <%= f.hidden_field :image_cache %>
   </div></br>

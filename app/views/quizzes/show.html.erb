@@ -23,6 +23,10 @@
   </div></br>
   <div>
     <%= link_to '回答を見る', answer_path(@quiz), class: 'btn btn-outline-primary' %></br></br>
+    <% if @quiz.user == current_user %>
+      <%= link_to '編集', edit_quiz_path(@quiz), class: 'btn btn-success mr-3' %>
+      <%= link_to '削除', quiz_path(@quiz), method: :delete, data: { confirm: '削除しますか？' }, class: 'btn btn-danger' %>
+    <% end %>
     <%= link_to '一覧に戻る', quizzes_path, class: 'btn btn-outline-secondary' %>
   </div></br></br>
 

@@ -20,6 +20,9 @@
   "devDependencies": {
     "webpack-dev-server": "^3"
   },
+  "engines": {
+    "node": "15.14.0"
+  },
   "packageManager": "yarn@1.22.19",
   "_id": "dphotomap@0.1.0"
 }

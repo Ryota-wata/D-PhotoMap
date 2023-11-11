@@ -18,8 +18,8 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3",
-    "@types/node": "^15.14.0"
+    "@types/node": "^15.14.0",
+    "webpack-dev-server": "^3"
   },
   "engines": {
     "node": "15.14.0",

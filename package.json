@@ -6,7 +6,7 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "5.4.4",
+    "@rails/webpacker": "^5.4.4",
     "bootstrap": "^5.2.3",
     "cocoon": "github:nathanvda/cocoon#c24ba53",
     "flatpickr": "^4.6.13",
@@ -18,7 +18,8 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3"
+    "webpack-dev-server": "^3",
+    "@types/node": "^15.14.0"
   },
   "engines": {
     "node": "15.14.0"

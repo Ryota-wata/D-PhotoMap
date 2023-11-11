@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/terms_of_use', to: 'static_pages#terms_of_use'
   get '/login', to: 'user_sessions#new', as: :login
   post '/login', to: 'user_sessions#create'
+  post '/guest_login', to: 'user_sessions#guest_login'
   delete '/logout', to: 'user_sessions#destroy', as: :logout
   get '/map', to: 'photos#map'
   post "oauth/callback", to: "oauths#callback"

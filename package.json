@@ -22,7 +22,8 @@
     "@types/node": "^15.14.0"
   },
   "engines": {
-    "node": "15.14.0"
+    "node": "15.14.0",
+    "yarn": "1.22.19"
   },
   "packageManager": "yarn@1.22.19",
   "_id": "dphotomap@0.1.0"
